@@ -1,0 +1,13 @@
+{
+  "name": "nick/amz-satellite",
+  "authors": [
+    {
+      "name": "NickLeylandMedia",
+      "email": "nick@nick-leyland.com"
+    }
+  ],
+  "require": {
+    "jlevers/selling-partner-api": "^6.0",
+    "vlucas/phpdotenv": "^5.6"
+  }
+}
