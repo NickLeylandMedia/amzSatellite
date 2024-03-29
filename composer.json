@@ -8,6 +8,8 @@
   ],
   "require": {
     "jlevers/selling-partner-api": "^6.0",
-    "vlucas/phpdotenv": "^5.6"
+    "vlucas/phpdotenv": "^5.6",
+    "composer/semver": "^3.4",
+    "illuminate/support": "*"
   }
 }

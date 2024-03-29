@@ -10,8 +10,8 @@ use amzSatellite\APIConnection;
 
 $api = new APIConnection();
 
-$response = $api->getOffersByASIN('B07H8Q3JH9', 'ATVPDKIKX0DER', 'New', "Consumer");
+$response = $api->getOffersByASIN('B0CVSDGP5J', 'ATVPDKIKX0DER', 'New', "Consumer");
 
-// echo $response;
+echo $response;
 
 ?>

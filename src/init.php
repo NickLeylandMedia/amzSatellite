@@ -36,7 +36,7 @@ class APIConnection
         $this-> api = SellingPartnerApi::make(
             clientId: $_ENV["CLIENT_ID"],
             clientSecret: $_ENV["CLIENT_SECRET"],
-            refreshToken: $_ENV["CLIENT_SECRET"],
+            refreshToken: $_ENV["REFRESH_TOKEN"],
             endpoint: Endpoint::NA,  // Or Endpoint::EU, Endpoint::FE, Endpoint::NA_SANDBOX, etc.
         )->seller();
 
@@ -50,6 +50,12 @@ class APIConnection
         $response = $this->pricing->getItemOffers($asin, $marketplace_id, $item_condition);
         return $response;
     }
+
+    public function getFeesEstimate(string $asin, string $marketplace_id = 'ATVPDKIKX0DER', string $item_condition = 'New', string $price)
+    {
+        // $response = $this->fees->getMyFeesEstimateForAsin();
+        // return $response;
+    }
    
 
     public function echoVars()
@@ -60,14 +66,6 @@ class APIConnection
     }
 
 }
-
-
-
-
-
-
-
-
 
 
 ?>
