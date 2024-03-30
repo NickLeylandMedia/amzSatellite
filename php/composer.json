@@ -1,0 +1,21 @@
+{
+  "name": "nick/amz-satellite",
+  "authors": [
+    {
+      "name": "NickLeylandMedia",
+      "email": "nick@nick-leyland.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "amzSatellite\\": "src/"
+    }
+  },
+  "require": {
+    "jlevers/selling-partner-api": "^6.0",
+    "vlucas/phpdotenv": "^5.6",
+    "composer/semver": "^3.4",
+    "illuminate/support": "*",
+    "league/csv": "9.0"
+  }
+}
