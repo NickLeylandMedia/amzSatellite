@@ -21,7 +21,6 @@ $connector = SellingPartnerApi::make(
     endpoint: Endpoint::NA,  // Or Endpoint::EU, Endpoint::FE, Endpoint::NA_SANDBOX, etc.
 )->seller();
 
-$connector->productPricingV0()->getItemOffers('B085J1NB3X', 'ATVPDKIKX0DER', "New", "Consumer");
 
-var_dump($connector);
+
 

@@ -9,6 +9,8 @@ use AmazonPHP\SellingPartner\Regions;
 use AmazonPHP\SellingPartner\SellingPartnerSDK;
 use Buzz\Client\Curl;
 use AmazonPHP\SellingPartner\Configuration;
+
+
 //Product Fees Models
 use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest;
 use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest;

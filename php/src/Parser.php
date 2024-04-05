@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace sheetProcessor;
+namespace amzSatellite;
 
 use League\Csv\Reader;
 use League\Csv\Writer;
@@ -10,7 +10,7 @@ use League\Csv\Writer;
 // Enabling Composer Packages
 require __DIR__ . '/../vendor/autoload.php';
 
-class sheetProcessor
+class Parser
 {
     public function __construct() {
         
@@ -19,6 +19,8 @@ class sheetProcessor
     public function readPayload($payload) {
         
     }
+
+    
 }
 
 

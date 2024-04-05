@@ -1,3 +1,4 @@
 {
-  "mocha.subdirectory": "src"
+  "mocha.subdirectory": "src",
+  "search.useIgnoreFiles": true
 }
