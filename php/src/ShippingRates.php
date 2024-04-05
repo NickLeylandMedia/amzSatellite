@@ -109,13 +109,14 @@ class ShippingRates
         $results = $handler->processQueue();
         //Average the results
         $averageArr = [];
-        // foreach ($results as $result) {
-        //     var_dump($result);
-        // }
-
-        return json_encode($results);     
+        foreach ($results as $result) {
+            $item = json_decode($result, true);
+            array_push($averageArr, $item[0]['shipmentCost']);
+        }
+        $average = array_sum($averageArr) / count($averageArr);
+        return round($average, 2);
+ 
     }
-
     
 }
 
