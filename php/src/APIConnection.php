@@ -13,7 +13,12 @@ use League\Csv\Reader;
 use League\Csv\Writer;
 use SellingPartnerApi\SellingPartnerApi;
 use SellingPartnerApi\Enums\Endpoint;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\GetMyFeesEstimateRequest;
 use SellingPartnerApi\Seller\ReportsV20210630\Dto\CreateReportSpecification;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateRequest;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\PriceToEstimateFees;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\MoneyType;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateByIdRequest;
 
 
 // Get environment variables
@@ -28,9 +33,11 @@ class APIConnection
     private $fees;
     private $reports;
     private $catalog;
+    private $orders;
+    private $fba;
+    private $fbaInv;
+    private $fbaOther;
     
-    
-
     public function __construct()
     {   
         //Overall Connection
@@ -46,6 +53,24 @@ class APIConnection
         $this->fees = $this->api->productFees();
         $this->reports = $this->api->reports();
         $this->catalog = $this->api->catalogItems();
+        $this->orders = $this->api->orders();
+        $this->fba = $this->api->fbaInbound();
+        $this->fbaInv = $this->api->fbaInventory();
+        $this->fbaOther = $this->api->fbaInventoryV1();
+    }
+
+    public function getDimensionsByASIN($asin) {
+        $response = $this->catalog->getCatalogItem($asin, ["ATVPDKIKX0DER"], ["dimensions"])->json();
+        return $response;
+    }
+
+    public function scopeFBA() {
+        $response = $this->fbaInv->getInventorySummaries("Marketplace", "ATVPDKIKX0DER", ["ATVPDKIKX0DER"], false, null, null)->json();
+        return $response;
+    }
+
+    public function getOrders($startDate, $endDate, $nextToken = null, $maxResults = 10) {
+        $this->orders->getOrders(["ATVPDKIKX0DER"], $startDate, $endDate, $endDate, $startDate, ["Unshipped", "Shipped"], null, null, null, null, $maxResults, null, null, $nextToken, null, null, null, null, null, null, null, null);
     }
 
     public function searchCatalogItems($query, $pageToken = null) {
@@ -124,9 +149,27 @@ class APIConnection
 
     }
 
-    public function getOffersByASIN(string $asin, string $marketplace_id = 'ATVPDKIKX0DER', string $item_condition = 'New', string $customerType)
+    public function getOffersByASIN(string $asin, string $item_condition = 'New', string $customerType = "Consumer")
     {
-        $response = $this->pricing->getItemOffers($asin, $marketplace_id, $item_condition)->json();
+        $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', $item_condition, $customerType)->json();
+        return $response["payload"]["Summary"];
+    }
+
+    public function bulkFeesEstimate($asin, $price, $shipping) {
+        $money = new MoneyType("USD", $price);
+        $price = new PriceToEstimateFees($money);
+        $request = new FeesEstimateRequest('ATVPDKIKX0DER', $price, $asin, false);
+        $reqFormat = new FeesEstimateByIdRequest('asin', $asin, $request);
+
+        // var_dump($money);
+
+        // var_dump($price);
+
+        // var_dump($request);
+
+        // var_dump($reqFormat);
+
+        $response = $this->fees->getMyFeesEstimates([$reqFormat]);
         return $response;
     }
 

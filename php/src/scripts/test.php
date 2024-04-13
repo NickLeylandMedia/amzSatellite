@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 
 
-// require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 // require __DIR__ . '/../Handler.php';
 
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 // require __DIR__ . '/../APIConnection.php';
 
-// require __DIR__ . '/../Formatter.php';
+require __DIR__ . '/../Formatter.php';
 
 // require __DIR__ . '/../Parser.php';
 
@@ -22,8 +22,26 @@ require __DIR__ . '/../ShippingRates.php';
 
 
 
+
+
 use amzSatellite\Audit;
 use amzSatellite\ShippingRates;
+use amzSatellite\Formatter;
+use amzSatellite\APIConnection;
+
+$api = new APIConnection();
+
+$response = $api->bulkFeesEstimate("B07X13DBY6", 44.00, 5.00);
+
+var_dump($response);
+
+// $response = $api->getDimensionsByASIN("B083FVPS6L");
+
+// $decode = json_decode($response, true);
+
+// $dimensions = $decode["dimensions"];
+
+// var_dump($response["dimensions"][0]);
 
 
 
@@ -31,7 +49,30 @@ use amzSatellite\ShippingRates;
 
 // var_dump(ShippingRates::getShippingRates("ups", "ups_next_day_air", "06415", "90210", 32, 6, 6, 6));
 
-var_dump(ShippingRates::getComprehensiveAverage(16, 8, 4, 4));
+// var_dump(ShippingRates::getComprehensiveAverage(12, 33, 3, 1));
+
+// $date = Formatter::dateToISO("2024-04-06");
+
+// $date = Formatter::dateToISO("2024-04-06");
+
+// $raw = new DateTime($date);
+
+// $rawTime = $raw->getTimestamp();
+
+// var_dump($rawTime);
+
+// $response = $api->scopeFBA();
+
+// $response = $api->getOffersByASIN("B08B43PJ6F", 'New', "Business");
+
+// $response = $api->getDimensionsByASIN("B07X13DBY6");
+
+
+// $decode = json_decode($response, true);
+
+// var_dump($response);
+
+// var_dump(Formatter::dateToISO("2024-04-06"));
 
 
 // var_dump(ShippingRates::getShippingRates("ups", "ups_next_day_air", "06415", "68154", 32, 6, 6, 6));

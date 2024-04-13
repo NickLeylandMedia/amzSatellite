@@ -10,11 +10,9 @@ use League\Csv\Writer;
 // Enabling Composer Packages
 require __DIR__ . '/../vendor/autoload.php';
 
-class Parser
+class Processor
 {
-    
-
-    public function readPayload($payload) {
+    public static function extractOffers($payload) {
         
     }
 

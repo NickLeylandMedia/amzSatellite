@@ -89,9 +89,6 @@ class ShippingRates
         return $response;
     }
 
-
-    public static function getAverageRates(){}
-
     public static function getComprehensiveAverage($weight, $length, $width, $height){
         $rateReqs = [];
         $handler = new RequestHandler();
@@ -113,8 +110,8 @@ class ShippingRates
             $item = json_decode($result, true);
             array_push($averageArr, $item[0]['shipmentCost']);
         }
-        $average = array_sum($averageArr) / count($averageArr);
-        return round($average, 2);
+        $average = round(array_sum($averageArr) / count($averageArr), 2);
+        return $average;
  
     }
     

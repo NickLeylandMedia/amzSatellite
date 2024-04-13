@@ -10,9 +10,10 @@ require __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/models/offerRequest.php';
 
 use offerRequest;
+use DateTime;
 
 
-class FormatReqs
+class Formatter
 {
     public function arrayToOfferRequest($arr) {
         $reqArr = [];
@@ -21,6 +22,12 @@ class FormatReqs
             array_push($reqArr, $req);
         }
         return $reqArr;
+    }
+
+    public static function dateToISO($date) {
+        $rawDate = new DateTime($date);
+        $final = $rawDate->format(DateTime::ATOM);
+        return $final;
     }
 
     
