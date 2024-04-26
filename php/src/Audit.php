@@ -10,21 +10,18 @@ require __DIR__ . '/../vendor/autoload.php';
 use League\Csv\Reader;
 use League\Csv\Writer;
 use amzSatellite\APIConnection;
+use amzSatellite\DBConnection;
 
 
 
 class Audit
 {
-    public static function audit(){
-        $api = new APIConnection();
-        $reader = Reader::createFromPath(__DIR__ . "/input/input.csv", "r");
-        $reader->setHeaderOffset(0);
-        $records = $reader->getRecords();
+    public function analyzeSellThrough() {
         
-        foreach ($records as $record) {
-            var_dump($record);
-        }
-        // var_dump($records);
+    }
+
+    public function auditSKU() {
+         
     }
 }
 

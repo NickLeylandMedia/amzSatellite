@@ -15,7 +15,7 @@ use DateTime;
 
 class Formatter
 {
-    public function arrayToOfferRequest($arr) {
+    public static function arrayToOfferRequest($arr) {
         $reqArr = [];
         foreach ($arr as $item) {
             $req = new offerRequest($item, 'ATVPDKIKX0DER', 'New', 'Consumer', 'Offers');
@@ -24,11 +24,18 @@ class Formatter
         return $reqArr;
     }
 
+    public static function stringToDBDate($date) {
+        $rawDate = new DateTime($date);
+        $final = $rawDate->format('Y-m-d H:i:s');
+        return $final;
+    }
+
     public static function dateToISO($date) {
         $rawDate = new DateTime($date);
         $final = $rawDate->format(DateTime::ATOM);
         return $final;
     }
+
 
     
 }

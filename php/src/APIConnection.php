@@ -7,19 +7,30 @@ namespace amzSatellite;
 // Enabling Composer Packages
 require __DIR__ . '/../vendor/autoload.php';
 
+require_once __DIR__ . '/models/asinOffer.php';
+
 //Loading Packages/deps
 use Dotenv\Dotenv;
 use League\Csv\Reader;
 use League\Csv\Writer;
 use SellingPartnerApi\SellingPartnerApi;
 use SellingPartnerApi\Enums\Endpoint;
-use SellingPartnerApi\Seller\ProductFeesV0\Dto\GetMyFeesEstimateRequest;
-use SellingPartnerApi\Seller\ReportsV20210630\Dto\CreateReportSpecification;
-use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateRequest;
-use SellingPartnerApi\Seller\ProductFeesV0\Dto\PriceToEstimateFees;
-use SellingPartnerApi\Seller\ProductFeesV0\Dto\MoneyType;
-use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateByIdRequest;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Regions;
+use AmazonPHP\SellingPartner\SellingPartnerSDK;
+use Buzz\Client\Curl;
+use AmazonPHP\SellingPartner\Configuration;
+
+
+//Product Fees Models
+use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest;
+use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest;  
+use AmazonPHP\SellingPartner\Model\ProductFees\MoneyType;
+use AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees;
+
+use amzSatellite\Sellers;
+use asinOffer;
 
 // Get environment variables
 
@@ -31,12 +42,8 @@ class APIConnection
     private $api;
     private $pricing;
     private $fees;
-    private $reports;
     private $catalog;
     private $orders;
-    private $fba;
-    private $fbaInv;
-    private $fbaOther;
     
     public function __construct()
     {   
@@ -51,22 +58,16 @@ class APIConnection
         //API Endpoints
         $this->pricing = $this->api->productPricingV0();
         $this->fees = $this->api->productFees();
-        $this->reports = $this->api->reports();
         $this->catalog = $this->api->catalogItems();
         $this->orders = $this->api->orders();
-        $this->fba = $this->api->fbaInbound();
-        $this->fbaInv = $this->api->fbaInventory();
-        $this->fbaOther = $this->api->fbaInventoryV1();
     }
 
     public function getDimensionsByASIN($asin) {
-        $response = $this->catalog->getCatalogItem($asin, ["ATVPDKIKX0DER"], ["dimensions"])->json();
-        return $response;
-    }
-
-    public function scopeFBA() {
-        $response = $this->fbaInv->getInventorySummaries("Marketplace", "ATVPDKIKX0DER", ["ATVPDKIKX0DER"], false, null, null)->json();
-        return $response;
+        $rawResponse = $this->catalog->getCatalogItem($asin, ["ATVPDKIKX0DER"], ["dimensions"])->json();
+        $response = $rawResponse['dimensions'][0];
+        $itemDims = $response["item"];
+        $packageDims = $response["package"];
+        return ['item' => $itemDims, 'package' => $packageDims];
     }
 
     public function getOrders($startDate, $endDate, $nextToken = null, $maxResults = 10) {
@@ -87,9 +88,7 @@ class APIConnection
 
     public function bigCatalogSearch($query, $pages) {
         $response = null;
-
         $page = 1;
-
         $brands = [];
         $items = [];
         
@@ -143,10 +142,7 @@ class APIConnection
             }
             
         }
-
         return ['items' => $items, 'brands' => array_unique($brands)];
-
-
     }
 
     public function getOffersByASIN(string $asin, string $item_condition = 'New', string $customerType = "Consumer")
@@ -155,70 +151,45 @@ class APIConnection
         return $response["payload"]["Summary"];
     }
 
-    public function bulkFeesEstimate($asin, $price, $shipping) {
-        $money = new MoneyType("USD", $price);
-        $price = new PriceToEstimateFees($money);
-        $request = new FeesEstimateRequest('ATVPDKIKX0DER', $price, $asin, false);
-        $reqFormat = new FeesEstimateByIdRequest('asin', $asin, $request);
-
-        // var_dump($money);
-
-        // var_dump($price);
-
-        // var_dump($request);
-
-        // var_dump($reqFormat);
-
-        $response = $this->fees->getMyFeesEstimates([$reqFormat]);
-        return $response;
+    public function getFeesEstimate(string $asin, string $marketplace_id = 'ATVPDKIKX0DER', bool $is_amazon_fulfilled, string $currency_code, $id_value, $id_type, $price, $shipping_price)
+    {
+            $payload = new FeesEstimateByIdRequest([
+                    'fees_estimate_request' => new FeesEstimateRequest([
+                        "marketplace_id" => $marketplace_id,
+                        "is_amazon_fulfilled" => $is_amazon_fulfilled,
+                        "price_to_estimate_fees" => new PriceToEstimateFees([
+                            'listing_price' => new MoneyType([
+                                "currency_code" => $currency_code,
+                                "amount" => $price
+                            ]),
+                            'shipping' => new MoneyType([
+                                "currency_code" => $currency_code,
+                                "amount" => $shipping_price
+                            ])
+                        ]),
+                        'identifier' => uniqid("TR-", true)
+                    ]),
+                    'id_type' => $id_type,
+                    'id_value' => $id_value
+                ]);
+                return $payload;   
     }
 
-    public function getFeesEstimate(string $asin, string $marketplace_id = 'ATVPDKIKX0DER', string $item_condition = 'New', string $price)
-    {
-        // $response = $this->fees->getMyFeesEstimateForAsin();
-        // return $response;
-    }
+    public function getAmazonOffers($asin) {
+        $offers = [];
+        $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
+        $data = $response['payload']['Offers'];
+        $sellerInfo = new Sellers();
 
-    public function getReport($reportId)
-    {
-        $response = $this->reports->getReport($reportId);
-        return $response;
-    }
-
-    public function getReportDocument($docId)
-    {
-        $response = $this->reports->getReportDocument($docId, "GET_MERCHANT_LISTINGS_ALL_DATA", false);
-        return $response;
-    }
-   
-
-    public function listReports($reportType)
-    {
-        switch ($reportType) {
-            case 'allListings':
-                $response = $this->reports->getReports(['GET_MERCHANT_LISTINGS_ALL_DATA'])->json();
-                return $response;
-                break;   
+        foreach ($data as $offer) {
+            $seller = $sellerInfo::getSellerByID($offer["SellerId"]);
+            $convertedOffer = new asinOffer($seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
+            array_push($offers, $convertedOffer);
         }
+
+        return $offers;
     }
 
-    public function createReports($reportType)
-    {
-        switch ($reportType) {
-            case 'allListings':
-                $payload = new CreateReportSpecification(
-                    reportType: 'GET_MERCHANT_LISTINGS_ALL_DATA',
-                    marketplaceIds: ['ATVPDKIKX0DER'],
-                    dataStartTime: new \DateTime(),
-                    dataEndTime: new \DateTime()
-                );
-                $arr = $this->reports->createReport($payload)->json();
-                $value = reset($arr);
-                return $value;
-                break;
-            
-        }        
-    }
 
 }
 

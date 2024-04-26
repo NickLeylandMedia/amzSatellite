@@ -22,6 +22,33 @@ $dotenv = Dotenv::createImmutable(__DIR__, "/../.env")->load();
 
 class ShippingRates
 {
+    public static function getCarriers() {
+        $curl = curl_init();
+
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://ssapi.shipstation.com/carriers",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => array(
+    "Host: ssapi.shipstation.com",
+    "Authorization: Basic " . $_ENV["SHIPSTATION_MASTER_KEY"],
+  ),
+));
+
+$response = curl_exec($curl);
+
+file_put_contents('carriers.json', $response);
+
+curl_close($curl);
+return $response;
+    }
+
     public static function getServices($carrier){
         $curl = curl_init();
 
@@ -43,6 +70,7 @@ class ShippingRates
 
         $response = curl_exec($curl);
         curl_close($curl);
+        file_put_contents('services.json', $response);
         return $response;
     }
 
@@ -89,7 +117,7 @@ class ShippingRates
         return $response;
     }
 
-    public static function getComprehensiveAverage($weight, $length, $width, $height){
+    public static function getPrimeAverage($weight, $length, $width, $height){
         $rateReqs = [];
         $handler = new RequestHandler();
         //Form One Day Rate Requests
@@ -113,6 +141,36 @@ class ShippingRates
         $average = round(array_sum($averageArr) / count($averageArr), 2);
         return $average;
  
+    }
+
+    public static function getRegularAverage($weight, $length, $width, $height) {
+        $rateReqs = [];
+        $handler = new RequestHandler();
+        //Form Requests
+        if ($weight < 16) {
+            array_push($rateReqs, new rateRequest("stamps_com", "usps_first_class_mail", "04098", "06415", $weight, $length, $width, $height, "Rates"));
+            array_push($rateReqs, new rateRequest("stamps_com", "usps_first_class_mail", "04098", "68154", $weight, $length, $width, $height, "Rates"));
+            array_push($rateReqs, new rateRequest("stamps_com", "usps_first_class_mail", "04098", "90210", $weight, $length, $width, $height, "Rates"));
+        }
+
+        if ($weight >= 16) {
+            array_push($rateReqs, new rateRequest("stamps_com", "usps_priority_mail", "04098", "06415", $weight, $length, $width, $height, "Rates"));
+            array_push($rateReqs, new rateRequest("stamps_com", "usps_priority_mail", "04098", "68154", $weight, $length, $width, $height, "Rates"));
+            array_push($rateReqs, new rateRequest("stamps_com", "usps_priority_mail", "04098", "90210", $weight, $length, $width, $height, "Rates"));
+        }
+        
+        //Add Requests to Handler
+        $handler->bulkAddRequest($rateReqs);
+        //Trigger Processing
+        $results = $handler->processQueue();
+        //Average the results
+        $averageArr = [];
+        foreach ($results as $result) {
+            $item = json_decode($result, true);
+            array_push($averageArr, $item[0]['shipmentCost']);
+        }
+        $average = round(array_sum($averageArr) / count($averageArr), 2);
+        return $average;
     }
     
 }
