@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../vendor/autoload.php';
 
+require __DIR__ . '/../models/offerRequest.php';
+
 // require __DIR__ . '/../Formatter.php';
 
 // require __DIR__ . '/../Parser.php';
@@ -18,16 +20,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 
 
-use Blackhalloutfitters\RequestHandler;
+// use Blackhalloutfitters\RequestHandler;
 
 use amzSatellite\Audit;
 use amzSatellite\ShippingRates;
 use amzSatellite\Manifest;
 use amzSatellite\Parser;
 use amzSatellite\Formatter;
+use amzSatellite\Loader;
 use amzSatellite\APIConnection;
 use amzSatellite\DBConnection;
 use amzSatellite\Sellers;
+use amzSatellite\RequestHandler;
 
 // use skuSales;
 
@@ -41,6 +45,29 @@ $shipping = new ShippingRates();
 
 $sellers = new Sellers();
 
+$handler = new RequestHandler();
+
+$loader = new Loader();
+
+$loader->buildAsinAssoc();
+
+// $products = $db->getProductBySKU("TSSTXIS771MH");
+
+// $products = $db->getAllSkus(true);
+
+// $final = json_encode($products);
+
+
+
+// $lastFinal = json_decode($final, true);
+
+// var_dump($products);
+
+// file_put_contents("skus.json", $products);
+
+
+// file_put_contents("products.json", $products);
+
 // $result = $shipping::getCarriers();
 
 // $rate = $shipping::getShippingRates("stamps_com", "usps_first_class_mail", "06415", "90210", 4, 6, 6, 6);
@@ -49,11 +76,11 @@ $sellers = new Sellers();
 
 // $slowAverage = $shipping::getRegularAverage(19.4, 6, 6, 6);
 
-$results = $api->getAmazonOffers("B085JVR1ML"); 
+// $results = $api->getAmazonOffers("B085JVR1ML"); 
 
-var_dump($results);
+// var_dump($results);
 
-// sellers::addSeller("Backcountry", "A2RS6Z4HKBA2G7", "Park City", "UT", "84060", null, "18004094502", null, "backcountry.com");
+// sellers::addSeller("Fishermen's Source", "A200RT2GD87MLR", "Township", "NJ", "07712", "3501 Sunset Ave","8003884149", null, "fishermenssource.com/");
 
 // $result = $sellers::getSellerByID("AJ67UVA4UQWIB");
 

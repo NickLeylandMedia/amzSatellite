@@ -1,995 +1,462 @@
 [
-  {
-    "payload": {
-      "ASIN": "B085J1NB3X",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B085J1NB3X"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3014.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3014.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3014.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3014.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 4
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 4
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 508860 },
-          { "ProductCategoryId": "3397951", "Rank": 810 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 3349.99 },
-        "TotalOfferCount": 4
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3014.99 },
-          "ShippingTime": {
-            "maximumHours": 24,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 393,
-            "SellerPositiveFeedbackRating": 94
-          },
-          "ShipsFrom": { "State": "GA", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A1HD6C9B5XFBFZ",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 24,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 393,
-            "SellerPositiveFeedbackRating": 94
-          },
-          "ShipsFrom": { "State": "GA", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A1HD6C9B5XFBFZ",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 250 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 162331,
-            "SellerPositiveFeedbackRating": 86
-          },
-          "ShipsFrom": { "State": "UT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A2RS6Z4HKBA2G7",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B085J29JG1",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B085J29JG1"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 3
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 3
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 512032 },
-          { "ProductCategoryId": "3397951", "Rank": 821 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 3349.99 },
-        "TotalOfferCount": 3
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 24,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 393,
-            "SellerPositiveFeedbackRating": 94
-          },
-          "ShipsFrom": { "State": "GA", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A1HD6C9B5XFBFZ",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 0,
-            "minimumHours": 0,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 393,
-            "SellerPositiveFeedbackRating": 94
-          },
-          "ShipsFrom": { "State": "GA", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A1HD6C9B5XFBFZ",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B0CP6CWCJC",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B0CP6CWCJC"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 508860 },
-          { "ProductCategoryId": "3397951", "Rank": 810 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-        "TotalOfferCount": 1
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B0CP69P72B",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B0CP69P72B"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 508860 },
-          { "ProductCategoryId": "3397951", "Rank": 810 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-        "TotalOfferCount": 1
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 3499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B085J1F1WF",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B085J1F1WF"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 2
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 2
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 478311 },
-          { "ProductCategoryId": "6680026011", "Rank": 121 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 4349.99 },
-        "CompetitivePriceThreshold": {
-          "CurrencyCode": "USD",
-          "Amount": 2899.99
-        },
-        "SuggestedLowerPricePlusShipping": {
-          "CurrencyCode": "USD",
-          "Amount": 2899.99
-        },
-        "TotalOfferCount": 2
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4699.99 },
-          "ShippingTime": {
-            "maximumHours": 24,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 393,
-            "SellerPositiveFeedbackRating": 94
-          },
-          "ShipsFrom": { "State": "GA", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A1HD6C9B5XFBFZ",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B085J1C25H",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B085J1C25H"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 0 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 3
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 3
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 686398 },
-          { "ProductCategoryId": "3397951", "Rank": 995 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 4349.99 },
-        "TotalOfferCount": 3
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 150 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 162331,
-            "SellerPositiveFeedbackRating": 86
-          },
-          "ShipsFrom": { "State": "UT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A2RS6Z4HKBA2G7",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 0 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4699.99 },
-          "ShippingTime": {
-            "maximumHours": 24,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 393,
-            "SellerPositiveFeedbackRating": 94
-          },
-          "ShipsFrom": { "State": "GA", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A1HD6C9B5XFBFZ",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B0CP6BY19L",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B0CP6BY19L"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 2
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 2
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 2680122 },
-          { "ProductCategoryId": "3397951", "Rank": 1989 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-        "TotalOfferCount": 2
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 150 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 162331,
-            "SellerPositiveFeedbackRating": 86
-          },
-          "ShipsFrom": { "State": "UT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A2RS6Z4HKBA2G7",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B0CP6B2SFW",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B0CP6B2SFW"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 4624.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 1520365 },
-          { "ProductCategoryId": "3397951", "Rank": 1548 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-        "TotalOfferCount": 1
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4499.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B085J2CP53",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B085J2CP53"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 5124.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4999.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 5124.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 4999.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 2
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 2
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 464420 },
-          { "ProductCategoryId": "3397951", "Rank": 760 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 4849.99 },
-        "TotalOfferCount": 2
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4999.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        },
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 150 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 4999.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 162331,
-            "SellerPositiveFeedbackRating": 86
-          },
-          "ShipsFrom": { "State": "UT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "A2RS6Z4HKBA2G7",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": false,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B0CLV1MQRM",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B0CLV1MQRM"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 2724.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 2599.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 2724.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 2599.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 649489 },
-          { "ProductCategoryId": "6680026011", "Rank": 172 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 2449.99 },
-        "TotalOfferCount": 1
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 2599.99 },
-          "ShippingTime": {
-            "maximumHours": 48,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  },
-  {
-    "payload": {
-      "ASIN": "B0CLTZ35RL",
-      "status": "Success",
-      "ItemCondition": "New",
-      "Identifier": {
-        "MarketplaceId": "ATVPDKIKX0DER",
-        "ItemCondition": "New",
-        "ASIN": "B0CLTZ35RL"
-      },
-      "Summary": {
-        "LowestPrices": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3124.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 2999.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "BuyBoxPrices": [
-          {
-            "condition": "New",
-            "LandedPrice": { "CurrencyCode": "USD", "Amount": 3124.98 },
-            "ListingPrice": { "CurrencyCode": "USD", "Amount": 2999.99 },
-            "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 }
-          }
-        ],
-        "NumberOfOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "BuyBoxEligibleOffers": [
-          {
-            "condition": "new",
-            "fulfillmentChannel": "Merchant",
-            "OfferCount": 1
-          }
-        ],
-        "SalesRankings": [
-          { "ProductCategoryId": "sports_display_on_website", "Rank": 785767 },
-          { "ProductCategoryId": "6680026011", "Rank": 210 }
-        ],
-        "ListPrice": { "CurrencyCode": "USD", "Amount": 3249.99 },
-        "TotalOfferCount": 1
-      },
-      "Offers": [
-        {
-          "Shipping": { "CurrencyCode": "USD", "Amount": 124.99 },
-          "ListingPrice": { "CurrencyCode": "USD", "Amount": 2999.99 },
-          "ShippingTime": {
-            "maximumHours": 24,
-            "minimumHours": 24,
-            "availabilityType": "NOW"
-          },
-          "SellerFeedbackRating": {
-            "FeedbackCount": 614,
-            "SellerPositiveFeedbackRating": 87
-          },
-          "ShipsFrom": { "State": "CT", "Country": "US" },
-          "SubCondition": "new",
-          "SellerId": "AJ67UVA4UQWIB",
-          "IsFeaturedMerchant": true,
-          "IsBuyBoxWinner": true,
-          "IsFulfilledByAmazon": false
-        }
-      ],
-      "marketplaceId": "ATVPDKIKX0DER"
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
     }
-  }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ],
+  [
+    {
+      "sellerName": "Fishermen's Source",
+      "sellerID": "A200RT2GD87MLR",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 24,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    },
+    {
+      "sellerName": "Black Hall Outfitters",
+      "sellerID": "AJ67UVA4UQWIB",
+      "minHandlingTime": 24,
+      "maxHandlingTime": 48,
+      "price": 249.99,
+      "shippingCost": 0,
+      "totalCost": 249.99
+    }
+  ]
 ]

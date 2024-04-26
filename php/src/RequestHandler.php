@@ -27,7 +27,6 @@ class RequestHandler
 
     public function addRequest($payload) {
         array_push($this->requests, $payload);
-        
     }
 
     public function bulkAddRequest($arr) {
@@ -55,7 +54,7 @@ class RequestHandler
                 case "Offers":
                     try {
                         $response = $api->getOffersByASIN($request->asin, $request->marketplace, $request->condition, $request->customerType);
-                        array_push($resultsArr, $response->json());
+                        array_push($resultsArr, $response);
                     } catch (Exception $e) {
                        //If error, do an exponential backoff until success
                        echo "Wait Triggered";

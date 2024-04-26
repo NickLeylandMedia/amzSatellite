@@ -145,12 +145,6 @@ class APIConnection
         return ['items' => $items, 'brands' => array_unique($brands)];
     }
 
-    public function getOffersByASIN(string $asin, string $item_condition = 'New', string $customerType = "Consumer")
-    {
-        $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', $item_condition, $customerType)->json();
-        return $response["payload"]["Summary"];
-    }
-
     public function getFeesEstimate(string $asin, string $marketplace_id = 'ATVPDKIKX0DER', bool $is_amazon_fulfilled, string $currency_code, $id_value, $id_type, $price, $shipping_price)
     {
             $payload = new FeesEstimateByIdRequest([
@@ -175,7 +169,7 @@ class APIConnection
                 return $payload;   
     }
 
-    public function getAmazonOffers($asin) {
+    public function getOffersByASIN($asin) {
         $offers = [];
         $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
         $data = $response['payload']['Offers'];
@@ -186,7 +180,6 @@ class APIConnection
             $convertedOffer = new asinOffer($seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
             array_push($offers, $convertedOffer);
         }
-
         return $offers;
     }
 
