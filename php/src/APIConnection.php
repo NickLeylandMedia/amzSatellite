@@ -74,6 +74,11 @@ class APIConnection
         $this->orders->getOrders(["ATVPDKIKX0DER"], $startDate, $endDate, $endDate, $startDate, ["Unshipped", "Shipped"], null, null, null, null, $maxResults, null, null, $nextToken, null, null, null, null, null, null, null, null);
     }
 
+    public function getOrderByID($orderId) {
+        $response = $this->orders->getOrder($orderId, ["ATVPDKIKX0DER"])->json();
+        return $response;
+    }
+
     public function searchCatalogItems($query, $pageToken = null) {
         if (is_array($query)) {
             $response = $this->catalog->searchCatalogItems(["ATVPDKIKX0DER"], null, null, null, null, null, $query, null, null, 10, $pageToken)->json();

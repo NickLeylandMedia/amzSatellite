@@ -33,7 +33,11 @@ class ShopDBConnection
 
     public function getProductBySKU($sku) {
         $result = $this->conn->query("SELECT * FROM products WHERE sku = %s", $sku);
-        
+        return $result;
+    }
+
+    public function getInventoryBySKU($sku) {
+        $result = $this->conn->query("SELECT * FROM inventory WHERE sku = %s", $sku);
         return $result;
     }
 

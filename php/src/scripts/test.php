@@ -37,7 +37,7 @@ use amzSatellite\RequestHandler;
 
 // use skuSales;
 
-// $api = new APIConnection();
+$api = new APIConnection();
 
 // $parser = new Parser();
 
@@ -46,9 +46,15 @@ use amzSatellite\RequestHandler;
 
 // $parser->extractSkus();
 
-$loader = new Loader();
+// $loader = new Loader();
 
-$loader->buildAsinAssoc("report.csv");
+// $final = $loader->buildAsinAssoc("report.csv");
+
+// var_dump($final);
+
+// $order =  $api->getOrderByID("112-8334326-3982653");
+
+// var_dump($order);
 
 // $db = new ShopDBConnection();
 
