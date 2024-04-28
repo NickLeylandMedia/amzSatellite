@@ -29,27 +29,72 @@ use amzSatellite\Parser;
 use amzSatellite\Formatter;
 use amzSatellite\Loader;
 use amzSatellite\APIConnection;
-use amzSatellite\DBConnection;
+use amzSatellite\ShopDBConnection;
 use amzSatellite\Sellers;
 use amzSatellite\RequestHandler;
 
+// use DB;
+
 // use skuSales;
 
-$api = new APIConnection();
+// $api = new APIConnection();
 
-$parser = new Parser();
+// $parser = new Parser();
 
-$db = new DBConnection();
 
-$shipping = new ShippingRates();
+// $parser->loadReportData("report.csv", 0, false);
 
-$sellers = new Sellers();
-
-$handler = new RequestHandler();
+// $parser->extractSkus();
 
 $loader = new Loader();
 
-$loader->buildAsinAssoc();
+$loader->buildAsinAssoc("report.csv");
+
+// $db = new ShopDBConnection();
+
+// $skus = $db->getAllSkus(false);
+
+// var_dump($skus);
+
+// $db->getAllProducts();
+
+
+
+// $shipping = new ShippingRates();
+
+// $sellers = new Sellers();
+
+// $handler = new RequestHandler();
+
+// $loader = new Loader();
+
+// $loader->buildAsinAssoc("report.csv");
+
+// $manifest = new Manifest();
+
+// $shipments = $manifest->listShipments();
+
+// var_dump($shipments);
+// $skus = $db->getAllSkus(false);
+
+// var_dump($skus);
+
+
+
+
+// $loader->buildAsinAssoc("report.csv");
+
+
+
+
+
+// $manifest->bulkAddToShipment(3, ["ship2.tsv"]);
+
+// $manifest->createShipment("04/20/24", "Nomad and Paddles", "Shipment of madmacs, minnows, and a few paddles.");
+
+// $manifest->bulkAddToShipment(5, ["ship3.tsv", "ship32.tsv"]);
+
+// $manifest->updateShipment(4, "04/08/24", "Life Jacket Bulk", "Large shipment of many different life jacket sizes.");
 
 // $products = $db->getProductBySKU("TSSTXIS771MH");
 

@@ -8,24 +8,40 @@ namespace amzSatellite;
 require __DIR__ . '/../vendor/autoload.php';
 
 use DB;
+use Exception;
 use amzSatellite\Parser;
+use amzSatellite\ShopDBConnection;
+use amzSatellite\UtilDBConnection;
 
 
 class Loader
-{
-    public function __construct() {
-        DB::$user = $_ENV["DB_USER"];
-        DB::$password = $_ENV["DB_PASSWORD"];
-        DB::$dbName = $_ENV["DB_NAME"];
-    }
-
-    public function buildAsinAssoc() {
+{ 
+    public function buildAsinAssoc($reportFile) {
         $parser = new Parser();
-        $parser->loadReportData("report.csv", 0);
+        $shopDB = new ShopDBConnection();
+        $utilityDB = new UtilDBConnection();
+        $parser->loadReportData($reportFile, 0);
         $records = $parser->records;
+        $masterSkuList = $shopDB->getAllSkus();
+        
+        $amzSkus = [];
+
+
+
         foreach ($records as $record) {
+            if (str_contains($record['SKU'], "-FBA")) {
+                var_dump($record['SKU']);
+            }
             
         }
+
+       
+        
+        // foreach ($masterSkuList as $sku) {
+        //     var_dump($sku);
+        // }
+
+       
     }
 
 

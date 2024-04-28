@@ -1,1 +1,125 @@
-{"reports":[{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:28:43+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179355019812","dataEndTime":"2024-03-30T16:28:23+00:00","createdTime":"2024-03-30T16:28:24+00:00","processingStartTime":"2024-03-30T16:28:31+00:00","dataStartTime":"2024-03-30T16:28:23+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:28:23+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179354019812","dataEndTime":"2024-03-30T16:28:03+00:00","createdTime":"2024-03-30T16:28:03+00:00","processingStartTime":"2024-03-30T16:28:11+00:00","dataStartTime":"2024-03-30T16:28:03+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:26:05+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179353019812","dataEndTime":"2024-03-30T16:25:47+00:00","createdTime":"2024-03-30T16:25:47+00:00","processingStartTime":"2024-03-30T16:25:54+00:00","dataStartTime":"2024-03-30T16:25:47+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:24:36+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179352019812","dataEndTime":"2024-03-30T16:24:17+00:00","createdTime":"2024-03-30T16:24:17+00:00","processingStartTime":"2024-03-30T16:24:24+00:00","dataStartTime":"2024-03-30T16:24:17+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:22:10+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179351019812","dataEndTime":"2024-03-30T16:21:49+00:00","createdTime":"2024-03-30T16:21:50+00:00","processingStartTime":"2024-03-30T16:21:57+00:00","dataStartTime":"2024-03-30T16:21:49+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:17:36+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179349019812","dataEndTime":"2024-03-30T16:17:18+00:00","createdTime":"2024-03-30T16:17:18+00:00","processingStartTime":"2024-03-30T16:17:25+00:00","dataStartTime":"2024-03-30T16:17:18+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:15:07+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179348019812","dataEndTime":"2024-03-30T16:14:46+00:00","createdTime":"2024-03-30T16:14:47+00:00","processingStartTime":"2024-03-30T16:14:55+00:00","dataStartTime":"2024-03-30T16:14:46+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:13:51+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179347019812","dataEndTime":"2024-03-30T16:13:33+00:00","createdTime":"2024-03-30T16:13:33+00:00","processingStartTime":"2024-03-30T16:13:39+00:00","dataStartTime":"2024-03-30T16:13:33+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:10:48+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179346019812","dataEndTime":"2024-03-30T16:10:30+00:00","createdTime":"2024-03-30T16:10:31+00:00","processingStartTime":"2024-03-30T16:10:37+00:00","dataStartTime":"2024-03-30T16:10:30+00:00"},{"reportType":"GET_MERCHANT_LISTINGS_ALL_DATA","processingEndTime":"2024-03-30T16:09:40+00:00","processingStatus":"DONE","marketplaceIds":["ATVPDKIKX0DER"],"reportDocumentId":"amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700","reportId":"179345019812","dataEndTime":"2024-03-30T16:09:22+00:00","createdTime":"2024-03-30T16:09:22+00:00","processingStartTime":"2024-03-30T16:09:29+00:00","dataStartTime":"2024-03-30T16:09:22+00:00"}],"nextToken":"g1fmQFknUUCudbTFBpV5dpGj5b3tEtak6JRozgJWUDe1IcAIJ30MgtodWaD\/s54IfCWfwaf8bOBlqaPo8GU\/PO0uHWpU3Tb5jIa0329JCe3Hkc02Ze7zmasTvmLK6Jr5UmNMIMC7eRKzxmAX\/SqX4WQyj1ASiZyjBvjgCD4ceolmmFQFVAtP1bYXb9UOmanDN09HLiH9nuHXUOznDVC2NfDoTU4ogd82M48r5nOh7ZQTsmC+NZidZijl03q4hE6YwvcY+bnBQiGgu9ZKV7zh0XvmAGs5Bzi8DvVvN\/w0Uf48wbiM2qCGeeOqvr0aV3wxr\/wwoVk3M8+nIS9NMhtaCfkLFEDFG\/mxp4I8Q2LZaTC3qnqPej+6RneZ8P2cMBU9vAArJPowCgGL4Dd30Y8tlNsBJtDVmBX4\/P59T0uoR2dCvXkcfGiIe4IrMY3BN3Sx9ag5d3NmGFiye75WcNWbWygomdvhiSe3P5lg4haYlww99SJaSC8gqHq0h3ywJmf7BDkwliI\/45tw23W8+FPwIrB2t6KuoK3+Nsj\/YXD9ntofnbqt4mBZzS0t7yd3+JOPtsicA+LdxfNJnE1fECzYTXVWoKy+R8iryaMEv\/io\/\/bNZqUTld9bSGvvzqGcd9Z7l+7DQkYYVaJ1qpKg0IJ5k5+sAGVJQpayY136+dJ5NDE="}
+{
+  "reports": [
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:28:43+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179355019812",
+      "dataEndTime": "2024-03-30T16:28:23+00:00",
+      "createdTime": "2024-03-30T16:28:24+00:00",
+      "processingStartTime": "2024-03-30T16:28:31+00:00",
+      "dataStartTime": "2024-03-30T16:28:23+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:28:23+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179354019812",
+      "dataEndTime": "2024-03-30T16:28:03+00:00",
+      "createdTime": "2024-03-30T16:28:03+00:00",
+      "processingStartTime": "2024-03-30T16:28:11+00:00",
+      "dataStartTime": "2024-03-30T16:28:03+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:26:05+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179353019812",
+      "dataEndTime": "2024-03-30T16:25:47+00:00",
+      "createdTime": "2024-03-30T16:25:47+00:00",
+      "processingStartTime": "2024-03-30T16:25:54+00:00",
+      "dataStartTime": "2024-03-30T16:25:47+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:24:36+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179352019812",
+      "dataEndTime": "2024-03-30T16:24:17+00:00",
+      "createdTime": "2024-03-30T16:24:17+00:00",
+      "processingStartTime": "2024-03-30T16:24:24+00:00",
+      "dataStartTime": "2024-03-30T16:24:17+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:22:10+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179351019812",
+      "dataEndTime": "2024-03-30T16:21:49+00:00",
+      "createdTime": "2024-03-30T16:21:50+00:00",
+      "processingStartTime": "2024-03-30T16:21:57+00:00",
+      "dataStartTime": "2024-03-30T16:21:49+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:17:36+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179349019812",
+      "dataEndTime": "2024-03-30T16:17:18+00:00",
+      "createdTime": "2024-03-30T16:17:18+00:00",
+      "processingStartTime": "2024-03-30T16:17:25+00:00",
+      "dataStartTime": "2024-03-30T16:17:18+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:15:07+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179348019812",
+      "dataEndTime": "2024-03-30T16:14:46+00:00",
+      "createdTime": "2024-03-30T16:14:47+00:00",
+      "processingStartTime": "2024-03-30T16:14:55+00:00",
+      "dataStartTime": "2024-03-30T16:14:46+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:13:51+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179347019812",
+      "dataEndTime": "2024-03-30T16:13:33+00:00",
+      "createdTime": "2024-03-30T16:13:33+00:00",
+      "processingStartTime": "2024-03-30T16:13:39+00:00",
+      "dataStartTime": "2024-03-30T16:13:33+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:10:48+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179346019812",
+      "dataEndTime": "2024-03-30T16:10:30+00:00",
+      "createdTime": "2024-03-30T16:10:31+00:00",
+      "processingStartTime": "2024-03-30T16:10:37+00:00",
+      "dataStartTime": "2024-03-30T16:10:30+00:00"
+    },
+    {
+      "reportType": "GET_MERCHANT_LISTINGS_ALL_DATA",
+      "processingEndTime": "2024-03-30T16:09:40+00:00",
+      "processingStatus": "DONE",
+      "marketplaceIds": ["ATVPDKIKX0DER"],
+      "reportDocumentId": "amzn1.spdoc.1.4.na.31146e88-18e6-462c-86fc-fab39396160e.T95FHLOUMOI4U.47700",
+      "reportId": "179345019812",
+      "dataEndTime": "2024-03-30T16:09:22+00:00",
+      "createdTime": "2024-03-30T16:09:22+00:00",
+      "processingStartTime": "2024-03-30T16:09:29+00:00",
+      "dataStartTime": "2024-03-30T16:09:22+00:00"
+    }
+  ],
+  "nextToken": "g1fmQFknUUCudbTFBpV5dpGj5b3tEtak6JRozgJWUDe1IcAIJ30MgtodWaD/s54IfCWfwaf8bOBlqaPo8GU/PO0uHWpU3Tb5jIa0329JCe3Hkc02Ze7zmasTvmLK6Jr5UmNMIMC7eRKzxmAX/SqX4WQyj1ASiZyjBvjgCD4ceolmmFQFVAtP1bYXb9UOmanDN09HLiH9nuHXUOznDVC2NfDoTU4ogd82M48r5nOh7ZQTsmC+NZidZijl03q4hE6YwvcY+bnBQiGgu9ZKV7zh0XvmAGs5Bzi8DvVvN/w0Uf48wbiM2qCGeeOqvr0aV3wxr/wwoVk3M8+nIS9NMhtaCfkLFEDFG/mxp4I8Q2LZaTC3qnqPej+6RneZ8P2cMBU9vAArJPowCgGL4Dd30Y8tlNsBJtDVmBX4/P59T0uoR2dCvXkcfGiIe4IrMY3BN3Sx9ag5d3NmGFiye75WcNWbWygomdvhiSe3P5lg4haYlww99SJaSC8gqHq0h3ywJmf7BDkwliI/45tw23W8+FPwIrB2t6KuoK3+Nsj/YXD9ntofnbqt4mBZzS0t7yd3+JOPtsicA+LdxfNJnE1fECzYTXVWoKy+R8iryaMEv/io//bNZqUTld9bSGvvzqGcd9Z7l+7DQkYYVaJ1qpKg0IJ5k5+sAGVJQpayY136+dJ5NDE="
+}

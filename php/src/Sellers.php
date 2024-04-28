@@ -12,9 +12,9 @@ use DB;
 class Sellers
 {
     public function __construct() {
-        DB::$user = $_ENV["DB_USER"];
-        DB::$password = $_ENV["DB_PASSWORD"];
-        DB::$dbName = $_ENV["DB_NAME"];
+        DB::$user = $_ENV["UTIL_DB_USER"];
+        DB::$password = $_ENV["UTIL_DB_PASSWORD"];
+        DB::$dbName = $_ENV["UTIL_DB_NAME"];
     }
 
     public static function addSeller($name, $amz_seller_id, $city, $state, $zip, $address, $phone, $email, $website) {

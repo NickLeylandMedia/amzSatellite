@@ -160,6 +160,17 @@ class Parser
         return $this->shipmentData;
     }
 
+    public function extractSkus() {
+        // Check if records are loaded
+        if (empty($this->records)) {
+            throw new Exception("No records loaded, please load your data with loadReportData() or bulkLoadReportData first.");
+        }
+
+        foreach ($this->records as $record) {
+            var_dump($record['SKU']);
+        }
+    }
+
     
 }
 
