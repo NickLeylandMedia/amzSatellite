@@ -22,6 +22,10 @@ use AmazonPHP\SellingPartner\SellingPartnerSDK;
 use Buzz\Client\Curl;
 use AmazonPHP\SellingPartner\Configuration;
 
+//Notification Models
+use AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest;
+use AmazonPHP\SellingPartner\Model\Notifications\DestinationResource;
+
 
 //Product Fees Models
 use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest;
@@ -44,6 +48,7 @@ class APIConnection
     private $fees;
     private $catalog;
     private $orders;
+    private $notifications;
     
     public function __construct()
     {   
@@ -60,6 +65,7 @@ class APIConnection
         $this->fees = $this->api->productFees();
         $this->catalog = $this->api->catalogItems();
         $this->orders = $this->api->orders();
+        $this->notifications = $this->api->notifications();
     }
 
     public function getDimensionsByASIN($asin) {
@@ -90,6 +96,7 @@ class APIConnection
             return $response;
         }
     }
+
 
     public function bigCatalogSearch($query, $pages) {
         $response = null;

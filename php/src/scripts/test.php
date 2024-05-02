@@ -37,12 +37,14 @@ use amzSatellite\RequestHandler;
 
 // use skuSales;
 
-$api = new APIConnection();
+// $api = new APIConnection();
 
 // $parser = new Parser();
 
 
-// $parser->loadReportData("report.csv", 0, false);
+// $parser->loadReportData("fba.tsv", 0, false);
+
+// $parser->listRecords();
 
 // $parser->extractSkus();
 

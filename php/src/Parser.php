@@ -101,6 +101,15 @@ class Parser
         }
     }
 
+    public function listRecords() {
+        if (empty($this->records)) {
+            throw new Exception("No records loaded, please load your data with loadReportData() or bulkLoadReportData first.");
+        }
+        foreach ($this->records as $record) {
+            var_dump($record);
+        }
+    }
+
     public function skuReceivedData() {
         if (empty($this->records)) {
             throw new Exception("No records loaded, please load your data with loadReportData() or bulkLoadReportData first.");
