@@ -32,7 +32,22 @@ use amzSatellite\APIConnection;
 use amzSatellite\ShopDBConnection;
 use amzSatellite\Sellers;
 use amzSatellite\RequestHandler;
+use amzSatellite\ShipstationUpdater;
 
+use Dotenv\Dotenv;
+
+//Load Environment variables
+$dotenv = Dotenv::createImmutable(__DIR__, "/../../.env")->load();
+
+//Initialize cURL
+$curl = curl_init();
+
+$updater = new ShipstationUpdater();
+
+$updater->updateShipment("Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true, "e9d89e0a-1135-a96d-7071-e1f42f48adba", "2024-05-02", "-420", "2024-12-27", "Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true);
+
+
+// var_dump(json_decode($response));
 // use DB;
 
 // use skuSales;

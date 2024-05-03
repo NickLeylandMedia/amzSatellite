@@ -60,12 +60,12 @@ class RequestHandler
                        echo "Wait Triggered";
                         $retries = 0;
                         $wait = 1;
-                        if ($retries == 10) {
+                        if ($retries == 30) {
                             array_push($retryArr, $request);
                             $retries = 0;
                             break;
                         }
-                        while ($retries < 10) {
+                        while ($retries < 30) {
                             $retries++;
                             sleep($wait);
                             $wait = $wait * 2;
