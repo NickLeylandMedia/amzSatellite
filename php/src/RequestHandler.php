@@ -13,51 +13,60 @@ use Exception;
 use amzSatellite\APIConnection;
 use amzSatellite\ShippingRates;
 
-class RequestHandler 
+class RequestHandler
 {
     private array $requests = [];
     private array $retries = [];
     private array $responses = [];
 
-    public function getRequestCount() {
+    public function getRequestCount()
+    {
         return count($this->requests);
     }
 
 
 
-    public function addRequest($payload) {
+    public function addRequest($payload)
+    {
         array_push($this->requests, $payload);
     }
 
-    public function bulkAddRequest($arr) {
+    public function bulkAddRequest($arr)
+    {
         foreach ($arr as $item) {
             array_push($this->requests, $item);
         }
     }
 
-    public function showQueue() {
+    public function showQueue()
+    {
         var_dump($this->requests);
     }
 
-    public function clearQueue() {
+    public function clearQueue()
+    {
         $this->requests = [];
     }
 
 
     //PHP function to process an array with exponential backoff if request fails and push failures to another array
-    public function processQueue() {
+    public function processQueue()
+    {
         $api = new APIConnection();
         $retryArr = [];
         $resultsArr = [];
         foreach ($this->requests as $request) {
-            switch($request->reqType) {
+            switch ($request->reqType) {
+                case "Orders":
+
+
                 case "Offers":
                     try {
                         $response = $api->getOffersByASIN($request->asin, $request->marketplace, $request->condition, $request->customerType);
                         array_push($resultsArr, $response);
                     } catch (Exception $e) {
-                       //If error, do an exponential backoff until success
-                       echo "Wait Triggered";
+                        //If error, do an exponential backoff until success
+                        echo "Wait Triggered";
                         $retries = 0;
                         $wait = 1;
                         if ($retries == 30) {
@@ -87,7 +96,7 @@ class RequestHandler
                     try {
                         $response = ShippingRates::getShippingRates($request->carrier, $request->service, $request->fromPostalCode, $request->toPostalCode, $request->weight, $request->length, $request->width, $request->height);
                         array_push($resultsArr, $response);
-                    } catch(Exception $e) {
+                    } catch (Exception $e) {
                         //If error, do an exponential backoff until success
                         echo "Wait Triggered";
                         $retries = 0;
@@ -113,13 +122,8 @@ class RequestHandler
                     break;
                 default:
                     throw new Exception("Invalid Request Type");
-
-            }        
-        }  
-        return $resultsArr;  
-    } 
+            }
+        }
+        return $resultsArr;
+    }
 }
-
-
-
-?>

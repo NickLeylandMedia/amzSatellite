@@ -31,7 +31,8 @@ const ManifestLog: React.FC<Props> = () => {
   return (
     <div className="ManifestLog w-[95%] mx-auto my-5">
       <h2 className="text-black text-center text-4xl">FBA Shipment Manifest</h2>
-      <div className="flex flex-col w-full mx-auto my-5"></div>
+      <div className="manifestActions"></div>
+      <div className="shipmentLog grid grid-cols-3 w-full mx-auto my-5"></div>
     </div>
   );
 };

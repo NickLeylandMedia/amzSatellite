@@ -1,0 +1,48 @@
+{
+  "payload": {
+    "BuyerInfo": { "BuyerEmail": "1rz6yrtyyvhc0r6@marketplace.amazon.com" },
+    "AmazonOrderId": "111-4841659-3917846",
+    "EarliestDeliveryDate": "2024-05-06T07:00:00Z",
+    "EarliestShipDate": "2024-05-04T07:00:00Z",
+    "SalesChannel": "Amazon.com",
+    "AutomatedShippingSettings": { "HasAutomatedShippingSettings": false },
+    "OrderStatus": "Shipped",
+    "NumberOfItemsShipped": 1,
+    "OrderType": "StandardOrder",
+    "IsPremiumOrder": false,
+    "IsPrime": false,
+    "FulfillmentChannel": "MFN",
+    "NumberOfItemsUnshipped": 0,
+    "HasRegulatedItems": false,
+    "IsReplacementOrder": false,
+    "IsSoldByAB": false,
+    "LatestShipDate": "2024-05-05T06:59:59Z",
+    "ShipServiceLevel": "Exp US D2D Dom",
+    "DefaultShipFromLocationAddress": {
+      "StateOrRegion": "CT",
+      "AddressLine1": "null",
+      "PostalCode": "06498",
+      "City": "Westbrook",
+      "CountryCode": "US",
+      "Name": "null"
+    },
+    "IsISPU": false,
+    "MarketplaceId": "ATVPDKIKX0DER",
+    "LatestDeliveryDate": "2024-05-09T06:59:59Z",
+    "PurchaseDate": "2024-05-03T16:12:36Z",
+    "ShippingAddress": {
+      "StateOrRegion": "IL",
+      "PostalCode": "60081-8435",
+      "City": "SPRING GROVE",
+      "CountryCode": "US"
+    },
+    "IsAccessPointOrder": false,
+    "PaymentMethod": "Other",
+    "IsBusinessOrder": false,
+    "OrderTotal": { "CurrencyCode": "USD", "Amount": "139.47" },
+    "PaymentMethodDetails": ["Standard"],
+    "IsGlobalExpressEnabled": false,
+    "LastUpdateDate": "2024-05-03T19:32:01Z",
+    "ShipmentServiceLevelCategory": "Expedited"
+  }
+}

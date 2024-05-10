@@ -1,12 +1,1 @@
-[
-  {
-    "purchaseDate": "2024-05-03T16:11:25Z",
-    "latestShipDate": "2024-05-05T06:59:59Z",
-    "latestDeliveryDate": "2024-05-09T06:59:59Z"
-  },
-  {
-    "purchaseDate": "2024-05-03T16:12:36Z",
-    "latestShipDate": "2024-05-05T06:59:59Z",
-    "latestDeliveryDate": "2024-05-09T06:59:59Z"
-  }
-]
+[{"platform":"amazon","orderID":"114-2467273-1474603","purchaseDate":"2024-05-03T16:11:25Z","latestShipDate":"2024-05-05T06:59:59Z","latestDeliveryDate":"2024-05-09T06:59:59Z"},{"platform":"amazon","orderID":"111-4841659-3917846","purchaseDate":"2024-05-03T16:12:36Z","latestShipDate":"2024-05-05T06:59:59Z","latestDeliveryDate":"2024-05-09T06:59:59Z"}]

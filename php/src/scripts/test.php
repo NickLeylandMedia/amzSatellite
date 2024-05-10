@@ -42,9 +42,9 @@ $dotenv = Dotenv::createImmutable(__DIR__, "/../../.env")->load();
 //Initialize cURL
 $curl = curl_init();
 
-$updater = new ShipstationUpdater();
+// $updater = new ShipstationUpdater();
 
-$updater->updateShipment("Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true, "e9d89e0a-1135-a96d-7071-e1f42f48adba", "2024-05-02", "-420", "2024-12-27", "Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true);
+// $updater->updateShipment("Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true, "e9d89e0a-1135-a96d-7071-e1f42f48adba", "2024-05-02", "-420", "2024-12-27", "Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true);
 
 
 // var_dump(json_decode($response));
@@ -52,7 +52,19 @@ $updater->updateShipment("Nick Leyland", null, "309 E SHORE DR", null, null, "CO
 
 // use skuSales;
 
-// $api = new APIConnection();
+$api = new APIConnection();
+
+$rates = new ShippingRates();
+
+$retries = 0;
+
+while ($retries < 50) {
+    $response = $rates->getShippingRates("stamps_com", "usps_first_class_mail", "06415", "90210", 4, 6, 6, 6);
+    // var_dump(json_decode($response));
+    $retries++;
+    var_dump($retries);
+}
+
 
 // $parser = new Parser();
 
@@ -400,5 +412,3 @@ $updater->updateShipment("Nick Leyland", null, "309 E SHORE DR", null, null, "CO
 // echo $payload->reqType;
 
 // $handler->showQueue();
-
-?>
