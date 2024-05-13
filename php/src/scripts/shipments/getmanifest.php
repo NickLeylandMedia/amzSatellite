@@ -13,10 +13,7 @@ $dotenv = Dotenv::createImmutable(__DIR__, "/../../../.env")->load();
 try {
     //Initalize Manifest Class
     $manifest = new Manifest();
-    //Get Shipments
-    $shipments = $manifest->listShipments();
-    //Return Shipments
-    echo json_encode($shipments);
-    // file_put_contents("data.json", json_encode($shipments));
+    //Get POST data
+    $postData = json_decode(file_get_contents('php://input'), true);
 } catch (Exception $ex) {
 }

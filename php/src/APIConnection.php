@@ -33,7 +33,9 @@ use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest;
 use AmazonPHP\SellingPartner\Model\ProductFees\MoneyType;
 use AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees;
 
-use amzSatellite\Sellers;
+use amzSatellite\UtilDBConnection;
+
+// use amzSatellite\Sellers;
 use asinOffer;
 
 // Get environment variables
@@ -190,13 +192,39 @@ class APIConnection
         $offers = [];
         $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
         $data = $response['payload']['Offers'];
-        $sellerInfo = new Sellers();
+        $sellerInfo = new UtilDBConnection();
 
         foreach ($data as $offer) {
-            $seller = $sellerInfo::getSellerByID($offer["SellerId"]);
-            $convertedOffer = new asinOffer($seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
+            $seller = $sellerInfo->getSellerByID($offer["SellerId"]);
+            $convertedOffer = new asinOffer($asin, $seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
             array_push($offers, $convertedOffer);
         }
+        return $offers;
+    }
+
+    public function bulkGetOffersByASIN($asins, $save = false)
+    {
+
+        $offers = [];
+        foreach ($asins as $asin) {
+            try {
+                $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
+            } catch (\Exception $ex) {
+                //Wait 3 seconds and retry
+                sleep(3);
+                $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
+            }
+
+            $data = $response['payload']['Offers'];
+            $sellerInfo = new UtilDBConnection();
+
+            foreach ($data as $offer) {
+                $seller = $sellerInfo->getSellerByID($offer["SellerId"]);
+                $convertedOffer = new asinOffer($asin, $seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
+                array_push($offers, $convertedOffer);
+            }
+        }
+        if ($save) file_put_contents('offers.json', json_encode($offers));
         return $offers;
     }
 }

@@ -30,7 +30,6 @@ class ShipstationUpdater
         try {
             //Initialize cURL
             $curl = curl_init();
-
             //Set properties on payload
             $payload = [
                 "shipTo" => [
@@ -65,7 +64,6 @@ class ShipstationUpdater
                 "orderNumber" => $orderNumber,
                 "shipByDate" => $shipByDate
             ];
-
             //Set cURL options
             curl_setopt_array($curl, array(
                 CURLOPT_URL => "https://ssapi.shipstation.com/orders/createorder",
@@ -82,10 +80,57 @@ class ShipstationUpdater
                     "Content-Type: application/json"
                 ),
             ));
-
             //Execute curl response
             $response = curl_exec($curl);
+            //Close cURL
             curl_close($curl);
+        } catch (\Exception $ex) {
+            $this->logger->error($ex->getMessage());
+            echo $ex->getMessage();
+        }
+    }
+
+    public function showPayload(string $name, string | null $company, string $street1, string | null $street2, string | null $street3, string $city, string $state, string $postalCode, string $country = "US", string $phone, bool $residential, string $orderKey, string $orderDate, string $orderNumber, string $shipByDate, string $billingName, string | null $billingCompany, $billingStreet1, $billingStreet2, $billingStreet3, $billingCity, $billingState, $billingPostalCode, $billingCountry, $billingPhone, $billingResidential)
+    {
+        try {
+            //Initialize cURL
+            $curl = curl_init();
+            //Set properties on payload
+            $payload = [
+                "shipTo" => [
+                    "name" => $name,
+                    "company" => $company,
+                    "street1" => $street1,
+                    "street2" => $street2,
+                    "street3" => $street3,
+                    "city" => $city,
+                    "state" => $state,
+                    "postalCode" => $postalCode,
+                    "country" => $country,
+                    "phone" => $phone,
+                    "residential" => $residential
+                ],
+                "orderKey" => $orderKey,
+                "billTo" => [
+                    "name" => $billingName,
+                    "company" => $billingCompany,
+                    "street1" => $billingStreet1,
+                    "street2" => $billingStreet2,
+                    "street3" => $billingStreet3,
+                    "city" => $billingCity,
+                    "state" => $billingState,
+                    "postalCode" => $billingPostalCode,
+                    "country" => $billingCountry,
+                    "phone" => $billingPhone,
+                    "residential" => $billingResidential
+                ],
+                "orderStatus" => "awaiting_shipment",
+                "orderDate" => $orderDate,
+                "orderNumber" => $orderNumber,
+                "shipByDate" => $shipByDate
+            ];
+            //Return payload
+            return $payload;
         } catch (\Exception $ex) {
             $this->logger->error($ex->getMessage());
             echo $ex->getMessage();

@@ -94,10 +94,4 @@ class Manifest
 
         return true;
     }
-
-
-
-    // public function listShipments($startDate, $endDate) {
-
-    // }
 }

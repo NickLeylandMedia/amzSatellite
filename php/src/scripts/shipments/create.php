@@ -17,12 +17,14 @@ try {
     $manifest = new Manifest();
     //Add Shipment
     $action = $manifest->createShipment($postData['date'], $postData['name'], $postData['summary']);
-    //Return Action
+    //Retrieve Most Recent Shipment
     $last = $manifest->getMostRecentShipment();
+    //Form Payload With Data
     $payload = [
         "message" => "New shipment added to manifest!",
         "shipment" => $last
     ];
+    //Return Payload
     echo json_encode($payload);
 } catch (Exception $ex) {
     echo json_encode($ex);

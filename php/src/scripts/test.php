@@ -33,6 +33,7 @@ use amzSatellite\ShopDBConnection;
 use amzSatellite\Sellers;
 use amzSatellite\RequestHandler;
 use amzSatellite\ShipstationUpdater;
+use amzSatellite\Mailer;
 
 use Dotenv\Dotenv;
 
@@ -40,30 +41,30 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__, "/../../.env")->load();
 
 //Initialize cURL
-$curl = curl_init();
+// $curl = curl_init();
 
 // $updater = new ShipstationUpdater();
 
-// $updater->updateShipment("Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true, "e9d89e0a-1135-a96d-7071-e1f42f48adba", "2024-05-02", "-420", "2024-12-27", "Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true);
+$api = new APIConnection();
 
+// $rates = new ShippingRates();
 
+// $mailer = new Mailer();
+
+$req = $api->bulkGetOffersByASIN(["B0CYXYM55N", "B0CYXZVRVC", "B08JHBYWT6", "B085JVR1ML", "B0CLTZR9DJ", "B0CLV1MQRM", "B0CP69P72B", "B085J1WQWC", "B08JHC1KFH", "B0CLTYX9DN", "B0CP6B2SFW", "B0CP6B9SMP", "B0CLV12DWT", "B085JKC9JM", "B085JKB187", "B085K32J4R", "B085JK7D4M", "B0CLV1Y2RX", "B0CP6B7WF5", "B085J1F1WF", "B0CP6BY19L", "B0CLTZ35RL", "B085JQXWCM", "B085J2CP53", "B0CLTZ5HCG", "B0CPGB4CQG", "B0CPFYCQYP", "B085JJZQ31", "B085J1NB3X"], true);
+
+// $disp = $updater->showPayload("Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true, "test123", "2024-05-02", "-420", "2024-12-31", "Nick Leyland", null, "309 E SHORE DR", null, null, "COLCHESTER", "CT", "06415", "US", "8603333161", true);
+var_dump($req);
+// $send = json_encode($disp);
+
+// var_dump(json_encode($disp));
+
+// $mailer->sendMail("nick@blackhalloutfitters.com", "Test", "Hello", null);
 // var_dump(json_decode($response));
 // use DB;
 
 // use skuSales;
 
-$api = new APIConnection();
-
-$rates = new ShippingRates();
-
-$retries = 0;
-
-while ($retries < 50) {
-    $response = $rates->getShippingRates("stamps_com", "usps_first_class_mail", "06415", "90210", 4, 6, 6, 6);
-    // var_dump(json_decode($response));
-    $retries++;
-    var_dump($retries);
-}
 
 
 // $parser = new Parser();

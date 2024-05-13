@@ -6,7 +6,8 @@ declare(strict_types=1);
 // Enabling Composer Packages
 require __DIR__ . '/../../vendor/autoload.php';
 
-class asinOffer {
+class asinOffer
+{
     public $sellerName;
     public $sellerID;
     public $minHandlingTime;
@@ -14,11 +15,13 @@ class asinOffer {
     public $price;
     public $shippingCost;
     public $totalCost;
+    public $asin;
 
 
-    
-    public function __construct($sellerName, $sellerID, $minHandlingTime, $maxHandlingTime, $price, $shippingCost, $totalCost)
+
+    public function __construct($asin, $sellerName, $sellerID, $minHandlingTime, $maxHandlingTime, $price, $shippingCost, $totalCost)
     {
+        $this->asin = $asin;
         $this->sellerName = $sellerName;
         $this->sellerID = $sellerID;
         $this->minHandlingTime = $minHandlingTime;
@@ -28,5 +31,3 @@ class asinOffer {
         $this->totalCost = $totalCost;
     }
 }
-
-?>

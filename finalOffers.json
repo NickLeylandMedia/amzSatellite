@@ -1,0 +1,687 @@
+[
+  {
+    "asin": "B0CYXYM55N",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4499.99,
+        "shippingCost": 199.99,
+        "totalCost": 4699.98,
+        "asin": "B0CYXYM55N"
+      }
+    ]
+  },
+  {
+    "asin": "B0CYXZVRVC",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4999.99,
+        "shippingCost": 199.99,
+        "totalCost": 5199.98,
+        "asin": "B0CYXZVRVC"
+      }
+    ]
+  },
+  {
+    "asin": "B08JHBYWT6",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 1299.99,
+        "shippingCost": 199.99,
+        "totalCost": 1499.98,
+        "asin": "B08JHBYWT6"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 1299.99,
+        "shippingCost": 200,
+        "totalCost": 1499.99,
+        "asin": "B08JHBYWT6"
+      }
+    ]
+  },
+  {
+    "asin": "B085JVR1ML",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 1299.99,
+        "shippingCost": 199.99,
+        "totalCost": 1499.98,
+        "asin": "B085JVR1ML"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 0,
+        "maxHandlingTime": 0,
+        "price": 1299.99,
+        "shippingCost": 200,
+        "totalCost": 1499.99,
+        "asin": "B085JVR1ML"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLTZR9DJ",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B0CLTZR9DJ"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLV1MQRM",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B0CLV1MQRM"
+      }
+    ]
+  },
+  {
+    "asin": "B0CP69P72B",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 3499.99,
+        "shippingCost": 124.99,
+        "totalCost": 3624.9799999999996,
+        "asin": "B0CP69P72B"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 3499.99,
+        "shippingCost": 125,
+        "totalCost": 3624.99,
+        "asin": "B0CP69P72B"
+      }
+    ]
+  },
+  {
+    "asin": "B085J1WQWC",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4999.99,
+        "shippingCost": 124.99,
+        "totalCost": 5124.98,
+        "asin": "B085J1WQWC"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 4999.99,
+        "shippingCost": 125,
+        "totalCost": 5124.99,
+        "asin": "B085J1WQWC"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4999.99,
+        "shippingCost": 150,
+        "totalCost": 5149.99,
+        "asin": "B085J1WQWC"
+      }
+    ]
+  },
+  {
+    "asin": "B08JHC1KFH",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2999.99,
+        "shippingCost": 124.99,
+        "totalCost": 3124.9799999999996,
+        "asin": "B08JHC1KFH"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2999.99,
+        "shippingCost": 150,
+        "totalCost": 3149.99,
+        "asin": "B08JHC1KFH"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLTYX9DN",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2899.99,
+        "shippingCost": 124.99,
+        "totalCost": 3024.9799999999996,
+        "asin": "B0CLTYX9DN"
+      }
+    ]
+  },
+  {
+    "asin": "B0CP6B2SFW",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4499.99,
+        "shippingCost": 124.99,
+        "totalCost": 4624.98,
+        "asin": "B0CP6B2SFW"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4499.99,
+        "shippingCost": 150,
+        "totalCost": 4649.99,
+        "asin": "B0CP6B2SFW"
+      }
+    ]
+  },
+  {
+    "asin": "B0CP6B9SMP",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4999.99,
+        "shippingCost": 124.99,
+        "totalCost": 5124.98,
+        "asin": "B0CP6B9SMP"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLV12DWT",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B0CLV12DWT"
+      }
+    ]
+  },
+  {
+    "asin": "B085JKC9JM",
+    "offers": [
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 0,
+        "totalCost": 2599.99,
+        "asin": "B085JKC9JM"
+      },
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B085JKC9JM"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 125,
+        "totalCost": 2724.99,
+        "asin": "B085JKC9JM"
+      }
+    ]
+  },
+  {
+    "asin": "B085JKB187",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B085JKB187"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 125,
+        "totalCost": 2724.99,
+        "asin": "B085JKB187"
+      }
+    ]
+  },
+  {
+    "asin": "B085K32J4R",
+    "offers": [
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2999.99,
+        "shippingCost": 0,
+        "totalCost": 2999.99,
+        "asin": "B085K32J4R"
+      },
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2999.99,
+        "shippingCost": 124.99,
+        "totalCost": 3124.9799999999996,
+        "asin": "B085K32J4R"
+      }
+    ]
+  },
+  {
+    "asin": "B085JK7D4M",
+    "offers": [
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2899.99,
+        "shippingCost": 0,
+        "totalCost": 2899.99,
+        "asin": "B085JK7D4M"
+      },
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2899.99,
+        "shippingCost": 124.99,
+        "totalCost": 3024.9799999999996,
+        "asin": "B085JK7D4M"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2899.99,
+        "shippingCost": 125,
+        "totalCost": 3024.99,
+        "asin": "B085JK7D4M"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLV1Y2RX",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2899.99,
+        "shippingCost": 124.99,
+        "totalCost": 3024.9799999999996,
+        "asin": "B0CLV1Y2RX"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2899.99,
+        "shippingCost": 150,
+        "totalCost": 3049.99,
+        "asin": "B0CLV1Y2RX"
+      }
+    ]
+  },
+  {
+    "asin": "B0CP6B7WF5",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 4999.99,
+        "shippingCost": 124.99,
+        "totalCost": 5124.98,
+        "asin": "B0CP6B7WF5"
+      }
+    ]
+  },
+  {
+    "asin": "B085J1F1WF",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4499.99,
+        "shippingCost": 0,
+        "totalCost": 4499.99,
+        "asin": "B085J1F1WF"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 4699.99,
+        "shippingCost": 0,
+        "totalCost": 4699.99,
+        "asin": "B085J1F1WF"
+      }
+    ]
+  },
+  {
+    "asin": "B0CP6BY19L",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4499.99,
+        "shippingCost": 124.99,
+        "totalCost": 4624.98,
+        "asin": "B0CP6BY19L"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4499.99,
+        "shippingCost": 150,
+        "totalCost": 4649.99,
+        "asin": "B0CP6BY19L"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLTZ35RL",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2999.99,
+        "shippingCost": 124.99,
+        "totalCost": 3124.9799999999996,
+        "asin": "B0CLTZ35RL"
+      }
+    ]
+  },
+  {
+    "asin": "B085JQXWCM",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2999.99,
+        "shippingCost": 124.99,
+        "totalCost": 3124.9799999999996,
+        "asin": "B085JQXWCM"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2999.99,
+        "shippingCost": 125,
+        "totalCost": 3124.99,
+        "asin": "B085JQXWCM"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2999.99,
+        "shippingCost": 150,
+        "totalCost": 3149.99,
+        "asin": "B085JQXWCM"
+      }
+    ]
+  },
+  {
+    "asin": "B085J2CP53",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 4999.99,
+        "shippingCost": 124.99,
+        "totalCost": 5124.98,
+        "asin": "B085J2CP53"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 4999.99,
+        "shippingCost": 150,
+        "totalCost": 5149.99,
+        "asin": "B085J2CP53"
+      }
+    ]
+  },
+  {
+    "asin": "B0CLTZ5HCG",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B0CLTZ5HCG"
+      }
+    ]
+  },
+  {
+    "asin": "B0CPGB4CQG",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 5999.99,
+        "shippingCost": 124.99,
+        "totalCost": 6124.98,
+        "asin": "B0CPGB4CQG"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 5999.99,
+        "shippingCost": 150,
+        "totalCost": 6149.99,
+        "asin": "B0CPGB4CQG"
+      }
+    ]
+  },
+  {
+    "asin": "B0CPFYCQYP",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 5999.99,
+        "shippingCost": 124.99,
+        "totalCost": 6124.98,
+        "asin": "B0CPFYCQYP"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 5999.99,
+        "shippingCost": 150,
+        "totalCost": 6149.99,
+        "asin": "B0CPFYCQYP"
+      }
+    ]
+  },
+  {
+    "asin": "B085JJZQ31",
+    "offers": [
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 124.99,
+        "totalCost": 2724.9799999999996,
+        "asin": "B085JJZQ31"
+      },
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 2599.99,
+        "shippingCost": 125,
+        "totalCost": 2724.99,
+        "asin": "B085JJZQ31"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 2599.99,
+        "shippingCost": 150,
+        "totalCost": 2749.99,
+        "asin": "B085JJZQ31"
+      }
+    ]
+  },
+  {
+    "asin": "B085J1NB3X",
+    "offers": [
+      {
+        "sellerName": "Cedar Creek Outdoor Center",
+        "sellerID": "A1HD6C9B5XFBFZ",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 24,
+        "price": 3499.99,
+        "shippingCost": 0,
+        "totalCost": 3499.99,
+        "asin": "B085J1NB3X"
+      },
+      {
+        "sellerName": "Black Hall Outfitters",
+        "sellerID": "AJ67UVA4UQWIB",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 3499.99,
+        "shippingCost": 0,
+        "totalCost": 3499.99,
+        "asin": "B085J1NB3X"
+      },
+      {
+        "sellerName": "Backcountry",
+        "sellerID": "A2RS6Z4HKBA2G7",
+        "minHandlingTime": 24,
+        "maxHandlingTime": 48,
+        "price": 3499.99,
+        "shippingCost": 250,
+        "totalCost": 3749.99,
+        "asin": "B085J1NB3X"
+      }
+    ]
+  }
+]
