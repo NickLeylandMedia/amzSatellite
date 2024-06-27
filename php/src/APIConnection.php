@@ -15,28 +15,17 @@ use League\Csv\Reader;
 use League\Csv\Writer;
 use SellingPartnerApi\SellingPartnerApi;
 use SellingPartnerApi\Enums\Endpoint;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\PriceToEstimateFees;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\GetMyFeesEstimateRequest;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateRequest;
+use SellingPartnerApi\Seller\ProductFeesV0\Dto\MoneyType;
 
-use AmazonPHP\SellingPartner\AccessToken;
-use AmazonPHP\SellingPartner\Regions;
-use AmazonPHP\SellingPartner\SellingPartnerSDK;
-use Buzz\Client\Curl;
-use AmazonPHP\SellingPartner\Configuration;
-
-//Notification Models
-use AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest;
-use AmazonPHP\SellingPartner\Model\Notifications\DestinationResource;
-
-
-//Product Fees Models
-use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest;
-use AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest;
-use AmazonPHP\SellingPartner\Model\ProductFees\MoneyType;
-use AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees;
 
 use amzSatellite\UtilDBConnection;
 
 // use amzSatellite\Sellers;
 use asinOffer;
+use Exception;
 
 // Get environment variables
 
@@ -55,19 +44,32 @@ class APIConnection
     public function __construct()
     {
         //Overall Connection
-        $this->api = SellingPartnerApi::make(
+        $this->api = SellingPartnerApi::seller(
             clientId: $_ENV["CLIENT_ID"],
             clientSecret: $_ENV["CLIENT_SECRET"],
             refreshToken: $_ENV["REFRESH_TOKEN"],
             endpoint: Endpoint::NA,  // Or Endpoint::EU, Endpoint::FE, Endpoint::NA_SANDBOX, etc.
-        )->seller();
+        );
 
         //API Endpoints
         $this->pricing = $this->api->productPricingV0();
-        $this->fees = $this->api->productFees();
-        $this->catalog = $this->api->catalogItems();
-        $this->orders = $this->api->orders();
-        $this->notifications = $this->api->notifications();
+        $this->fees = $this->api->productFeesV0();
+        $this->catalog = $this->api->catalogItemsV20220401();
+        $this->orders = $this->api->ordersV0();
+    }
+
+    public function getOffersBasic($asin)
+    {
+        try {
+            $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
+            return $response;
+        } catch (Exception $ex) {
+            $errmsg = $ex->getMessage();
+            if (str_contains($errmsg, "invalid")) {
+                var_dump("Invalid ASIN");
+            }
+            var_dump($errmsg);
+        }
     }
 
     public function getDimensionsByASIN($asin)
@@ -163,68 +165,97 @@ class APIConnection
         return ['items' => $items, 'brands' => array_unique($brands)];
     }
 
-    public function getFeesEstimate(string $asin, string $marketplace_id = 'ATVPDKIKX0DER', bool $is_amazon_fulfilled, string $currency_code, $id_value, $id_type, $price, $shipping_price)
+    public function getFeesByASIN($asin, $price)
     {
-        $payload = new FeesEstimateByIdRequest([
-            'fees_estimate_request' => new FeesEstimateRequest([
-                "marketplace_id" => $marketplace_id,
-                "is_amazon_fulfilled" => $is_amazon_fulfilled,
-                "price_to_estimate_fees" => new PriceToEstimateFees([
-                    'listing_price' => new MoneyType([
-                        "currency_code" => $currency_code,
-                        "amount" => $price
-                    ]),
-                    'shipping' => new MoneyType([
-                        "currency_code" => $currency_code,
-                        "amount" => $shipping_price
-                    ])
-                ]),
-                'identifier' => uniqid("TR-", true)
-            ]),
-            'id_type' => $id_type,
-            'id_value' => $id_value
-        ]);
-        return $payload;
+        $MT = new MoneyType("USD", $price);
+        $PTEF = new PriceToEstimateFees($MT, null, null);
+        $FER = new FeesEstimateRequest("ATVPDKIKX0DER", $PTEF, $asin);
+        $GMFER = new GetMyFeesEstimateRequest($FER);
+
+        $response = $this->fees->getMyFeesEstimateForAsin($asin, $GMFER)->json();
+        return $response;
     }
 
-    public function getOffersByASIN($asin)
+    public function getOffersByASIN($asin, $maxRetries = 15)
     {
-        $offers = [];
-        $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
-        $data = $response['payload']['Offers'];
-        $sellerInfo = new UtilDBConnection();
-
-        foreach ($data as $offer) {
-            $seller = $sellerInfo->getSellerByID($offer["SellerId"]);
-            $convertedOffer = new asinOffer($asin, $seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
-            array_push($offers, $convertedOffer);
-        }
-        return $offers;
+        //Initialize retries
+        $retries = 0;
+        do {
+            try {
+                //Array to store offers
+                $offers = [];
+                //Get offers from API
+                $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
+                //If the response has a payload and offers, store the offers in a variable
+                if (isset($response['payload'], $response['payload']['Offers']) && count($response['payload']['Offers']) > 0) {
+                    $data = $response['payload']['Offers'];
+                } else {
+                    throw new Exception("No offers found for $asin.");
+                }
+                //Initialize DB Connection
+                $sellerInfo = new UtilDBConnection();
+                //Iterate through offers and convert them to asinOffer objects
+                if (count($data) > 0) {
+                    foreach ($data as $offer) {
+                        //Retrieve Seller info from DB
+                        $seller = $sellerInfo->getSellerByID($offer["SellerId"]);
+                        //If the seller info is valid, create an asinOffer object
+                        if (count($seller) > 0 && isset($seller[0]["name"], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"])) {
+                            $convertedOffer = new asinOffer($asin, $seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
+                        }
+                        //If no seller is found, create an asinOffer object with the seller name as "Unknown"
+                        if (count($seller) == 0) {
+                            $convertedOffer = new asinOffer($asin, "Unknown", $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
+                        }
+                        //Push the offer to the offers array
+                        array_push($offers, $convertedOffer);
+                    }
+                    return $offers;
+                }
+            } catch (\Exception $ex) {
+                //If error message contains "No offers", throw an exception, end the retry loop
+                if (str_contains($ex->getMessage(), "No offers")) {
+                    throw new Exception("No offers found for $asin.");
+                    return;
+                }
+                //If error message contains "invalid", throw an exception, end the retry loop
+                if (str_contains($ex->getMessage(), "invalid")) {
+                    throw new Exception("Invalid ASIN");
+                    return;
+                }
+                //Increment retries on failure
+                $retries++;
+                //Sleep for 2 seconds before retrying
+                sleep(2 * $retries);
+                //If the max retries are reached, throw an exception
+                if ($retries == $maxRetries) {
+                    throw new Exception("Failed to get offers for $asin after $maxRetries retries.");
+                }
+            }
+        } while ($retries < $maxRetries);
     }
 
-    public function bulkGetOffersByASIN($asins, $save = false)
+    public function bulkGetOffersByASIN($asins)
     {
-
-        $offers = [];
+        //Initialize payload and error arrays
+        $payload = [];
+        $errorLoad = [];
+        $count = 0;
+        //Iterate through list of ASIN's and get offers
         foreach ($asins as $asin) {
             try {
-                $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
+                $count++;
+                echo ("Processing ASIN $count of " . count($asins));
+                //Get offers by ASIN
+                $data = $this->getOffersByASIN($asin);
+                //Push the ASIN and offers to the payload array
+                array_push($payload, ["asin" => $asin, "offers" => $data]);
             } catch (\Exception $ex) {
-                //Wait 3 seconds and retry
-                sleep(3);
-                $response = $this->pricing->getItemOffers($asin, 'ATVPDKIKX0DER', 'New', 'Consumer')->json();
-            }
-
-            $data = $response['payload']['Offers'];
-            $sellerInfo = new UtilDBConnection();
-
-            foreach ($data as $offer) {
-                $seller = $sellerInfo->getSellerByID($offer["SellerId"]);
-                $convertedOffer = new asinOffer($asin, $seller[0]["name"], $offer['SellerId'], $offer["ShippingTime"]["minimumHours"], $offer["ShippingTime"]["maximumHours"], $offer["ListingPrice"]["Amount"], $offer["Shipping"]["Amount"], $offer["ListingPrice"]["Amount"] + $offer["Shipping"]["Amount"]);
-                array_push($offers, $convertedOffer);
+                //If an error occurs, push the ASIN and error message to the errorLoad array
+                array_push($errorLoad, ["asin" => $asin, "error" => $ex->getMessage()]);
             }
         }
-        if ($save) file_put_contents('offers.json', json_encode($offers));
-        return $offers;
+        //Return final payload
+        return [$payload, $errorLoad];
     }
 }

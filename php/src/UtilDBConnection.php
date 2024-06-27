@@ -46,4 +46,26 @@ class UtilDBConnection
             'sku' => $sku
         ]);
     }
+
+    public function getASINAssocs()
+    {
+        $results = $this->conn->query("SELECT * FROM product_asins");
+        return $results;
+    }
+
+
+    public function listEbaySessions()
+    {
+        $results = $this->conn->query("SELECT * FROM ebay_sessions");
+        return $results;
+    }
+
+    public function addEbaySession($accessToken, $refreshToken, $expiration)
+    {
+        $this->conn->insert('ebay_sessions', [
+            'access_token' => $accessToken,
+            'refresh_token' => $refreshToken,
+            'access_expiration' => $expiration
+        ]);
+    }
 }

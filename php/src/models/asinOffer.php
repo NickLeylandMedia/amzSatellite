@@ -17,8 +17,6 @@ class asinOffer
     public $totalCost;
     public $asin;
 
-
-
     public function __construct($asin, $sellerName, $sellerID, $minHandlingTime, $maxHandlingTime, $price, $shippingCost, $totalCost)
     {
         $this->asin = $asin;

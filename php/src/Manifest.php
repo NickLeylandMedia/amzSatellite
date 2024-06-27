@@ -38,6 +38,12 @@ class Manifest
         return $shipment;
     }
 
+    public function getShipmentById(int $shipmentId)
+    {
+        $shipment = DB::queryFirstRow("SELECT * FROM shipments WHERE id=%i", $shipmentId);
+        return $shipment;
+    }
+
     public function createShipment(string $date, string $name, string $summary)
     {
         $formattedDate = Formatter::stringToDBDate($date);

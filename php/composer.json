@@ -12,7 +12,7 @@
     }
   },
   "require": {
-    "jlevers/selling-partner-api": "^6.0",
+    "jlevers/selling-partner-api": "^7.0",
     "vlucas/phpdotenv": "^5.6",
     "composer/semver": "^3.4",
     "illuminate/support": "*",
@@ -21,6 +21,7 @@
     "amazon-php/sp-api-sdk": "^5.0",
     "nyholm/psr7": "^1.8",
     "kriswallsmith/buzz": "*",
-    "sergeytsalkov/meekrodb": "^2.0"
+    "sergeytsalkov/meekrodb": "^2.0",
+    "phpseclib/phpseclib": "~3.0"
   }
 }

@@ -13,10 +13,12 @@ import React from "react";
 /* Component Interfaces */
 interface Props {
   shipments: any[];
+  modeSetter: (string: string) => void;
+  targeter: (any: any) => void;
 }
 
 /* Component */
-const ManifestLog: React.FC<Props> = ({ shipments }) => {
+const ManifestLog: React.FC<Props> = ({ shipments, modeSetter, targeter }) => {
   /* State Variables */
   /* End State Variables */
 
@@ -35,6 +37,13 @@ const ManifestLog: React.FC<Props> = ({ shipments }) => {
           <h3 className="text-black text-2xl">Shipment {shipment.id}</h3>
           <p className="text-black text-lg">Name: {shipment.name}</p>
           <p className="text-black text-lg">Date: {shipment.date}</p>
+          <p className="text-black text-lg">Summary: {shipment.summary}</p>
+          <button
+            onClick={(e) => targeter(shipment.id)}
+            className="my-2 py-2 px-7 bg-blue-500 hover:bg-blue-700 text-white"
+          >
+            VIEW
+          </button>
         </div>
       );
     });
@@ -48,11 +57,15 @@ const ManifestLog: React.FC<Props> = ({ shipments }) => {
   /* End Effects */
 
   /* Component Return Statement */
+
   return (
     <div className="ManifestLog w-[95%] mx-auto my-5">
       <h1 className="text-black text-center text-4xl">FBA Shipment Manifest</h1>
       <div className="manifestActions mx-auto w-[50%] flex flex-row justify-center my-4">
-        <button className="py-3 px-8 bg-green-400 hover:bg-green-700">
+        <button
+          className="py-3 px-8 bg-green-400 hover:bg-green-700"
+          onClick={(e) => modeSetter("form")}
+        >
           Add A Shipment
         </button>
       </div>

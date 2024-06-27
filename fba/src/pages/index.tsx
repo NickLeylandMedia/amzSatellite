@@ -8,10 +8,12 @@ import React, { useEffect, useState } from "react";
 
 /* Component Imports */
 import ManifestLog from "@/components/manifest/ManifestLog";
+import ShipmentDetail from "@/components/manifest/ShipmentDetail";
 import ShipmentForm from "@/components/manifest/ShipmentForm";
 
 /* Module Imports */
-import { getShipments } from "@/modules/api/shipments";
+import { getShipments, getManifest } from "@/modules/api/shipments";
+import { useQuery } from "@tanstack/react-query";
 
 /* Component Interfaces */
 interface Props {}
@@ -22,6 +24,8 @@ const Home: React.FC<Props> = () => {
   /* State Variables */
   const [shipments, setShipments] = useState([]);
   const [pageMode, setPageMode] = useState("manifest");
+  const [target, setTarget] = useState(null);
+  const [manifest, setManifest] = useState([]);
   /* End State Variables */
 
   /* Render Variables */
@@ -31,17 +35,48 @@ const Home: React.FC<Props> = () => {
   /* End Render Logic */
 
   /* Functions */
+  function clearManifestAndTarget() {
+    setTarget(null);
+    setManifest([]);
+  }
   /* End Functions */
 
   /* Effects */
-  useEffect(() => {
-    getShipments().then((data) => {
-      setShipments(data);
-    });
-  }, []);
+  //Shipment Query
+  useQuery({
+    queryKey: ["shipmentQuery"],
+    queryFn: () =>
+      getShipments().then((data) => {
+        setShipments(data);
+        return data.json();
+      }),
+    refetchInterval: 1000,
+  });
+
+  useQuery({
+    queryKey: ["manifestQuery"],
+    queryFn: () =>
+      getManifest(target).then((data) => {
+        setManifest(data);
+        return data.json();
+      }),
+    refetchInterval: 1000,
+  });
+
   /* End Effects */
 
   /* Component Return Statement */
+  if (target && shipments && shipments.length > 0) {
+    const targData = shipments.find((shipment: any) => shipment.id === target);
+    return (
+      <ShipmentDetail
+        data={targData}
+        manifest={manifest}
+        clearer={clearManifestAndTarget}
+      />
+    );
+  }
+
   return (
     <div className="Home page">
       {/* Header Start */}
@@ -49,8 +84,16 @@ const Home: React.FC<Props> = () => {
       {/* Header End */}
       {/* Content Start */}
       <div className="mainContent">
-        <ManifestLog shipments={shipments} />
-        <ShipmentForm />
+        {pageMode && pageMode === "manifest" ? (
+          <ManifestLog
+            shipments={shipments}
+            modeSetter={setPageMode}
+            targeter={setTarget}
+          />
+        ) : null}
+        {pageMode && pageMode === "form" ? (
+          <ShipmentForm modeSetter={setPageMode} />
+        ) : null}
       </div>
       {/* Content End */}
       {/* Footer Start */}
