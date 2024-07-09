@@ -5,6 +5,12 @@ async function getShipments() {
   ).then((res) => res.json());
 }
 
+async function getShipmentItems() {
+  return await fetch(
+    "https://api.blackhalloutfitters.com/debug/fbamanifest/src/scripts/allmanifests.php"
+  ).then((res) => res.json());
+}
+
 async function getOneShipment(id: number) {
   return await fetch(
     `https://api.blackhalloutfitters.com/debug/fbamanifest/src/scripts/get.php`
@@ -32,4 +38,41 @@ async function createShipment(name: string, date: string, summary: string) {
   ).then((res) => res.json());
 }
 
-export { createShipment, getShipments, getManifest };
+async function pushToShipment(
+  shipmentId: number,
+  sku: string,
+  quantity: number
+) {
+  return await fetch(
+    "https://api.blackhalloutfitters.com/debug/fbamanifest/src/scripts/add.php",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        shipment_id: shipmentId,
+        sku: sku,
+        quantity: quantity,
+      }),
+    }
+  ).then((res) => res.json());
+}
+
+async function bulkPushToShipment(items: any[]) {
+  return await fetch(
+    "https://api.blackhalloutfitters.com/debug/fbamanifest/src/scripts/addbulk.php",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        items: items,
+      }),
+    }
+  ).then((res) => res.json());
+}
+
+export {
+  createShipment,
+  getShipments,
+  getManifest,
+  getShipmentItems,
+  pushToShipment,
+  bulkPushToShipment,
+};

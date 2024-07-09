@@ -1,6 +1,6 @@
 /* Library Imports */
 //React
-import React from "react";
+import React, { useState } from "react";
 
 /* Stylesheet Imports */
 
@@ -8,6 +8,7 @@ import React from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 /* Component Imports */
+import SKUForm from "./SKUForm";
 
 /* Module Imports */
 
@@ -16,12 +17,19 @@ interface Props {
   data: any;
   manifest: any[];
   clearer: any;
+  refetch: any;
 }
 
 /* Component */
-const ShipmentDetail: React.FC<Props> = ({ data, manifest, clearer }) => {
+const ShipmentDetail: React.FC<Props> = ({
+  data,
+  manifest,
+  clearer,
+  refetch,
+}) => {
+  console.log({ data: data });
   /* State Variables */
-
+  const [showSKUForm, setShowSKUForm] = useState(false);
   /* End State Variables */
 
   /* Render Variables */
@@ -54,6 +62,13 @@ const ShipmentDetail: React.FC<Props> = ({ data, manifest, clearer }) => {
   /* Component Return Statement */
   return (
     <div className="ShipmentDetail  w-full flex flex-col my-5">
+      {showSKUForm && (
+        <SKUForm
+          closer={setShowSKUForm}
+          shipmentID={data.id}
+          refetch={refetch}
+        />
+      )}
       <IoMdArrowRoundBack
         className="absolute w-12 h-12 text-black top-[50px] left-[200px] cursor-pointer hover:text-red-500"
         onClick={() => clearer()}
@@ -73,11 +88,11 @@ const ShipmentDetail: React.FC<Props> = ({ data, manifest, clearer }) => {
         </div>
       </div>
       <div className="shipmentActions w-full flex flex-row justify-center">
-        <button className="bg-green-500 py-4 px-8 mx-2 hover:bg-green-900">
-          ADD SKU
-        </button>
-        <button className="bg-green-600 py-4 px-8 mx-2 hover:bg-green-950">
-          ADD SKUS (BULK)
+        <button
+          className="bg-green-500 py-4 px-8 mx-2 hover:bg-green-900"
+          onClick={(e) => setShowSKUForm(true)}
+        >
+          ADD SKUS TO SHIPMENT
         </button>
       </div>
       <div className="w-[75%] my-5 mx-auto grid grid-cols-1 gap-6">

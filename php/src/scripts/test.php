@@ -49,19 +49,55 @@ $dotenv = Dotenv::createImmutable(__DIR__, "/../../.env")->load();
 
 $api = new APIConnection();
 
-// $loader = new Loader2();
+$results = $api->bulkGetOffersByASIN([
+    "B0CYXYM55N",
+    "B0CYXZVRVC",
+    "B08JHBYWT6",
+    "B085JMYB2J",
+    "B085JVR1ML",
+    "B0CP8JQHBL",
+    "B0CLTZR9DJ",
+    "B0CLV1MQRM",
+    "B0CP6CWCJC",
+    "B0CP69P72B",
+    "B0CPGB4CQG",
+    "B0CPFYCQYP",
+    "B0CPGDT6P9",
+    "B0CLV1Y2RX",
+    "B0CLTYX9DN",
+    "B0CLV12DWT",
+    "B0CLTZ5HCG",
+    "B0CLTZ35RL",
+    "B0CP6B7WF5",
+    "B0CP6B9SMP",
+    "B0CP6B2SFW",
+    "B0CP6BY19L",
+    "B085J1NB3X",
+    "B085JKC34J",
+    "B085J2CP53",
+    "B085J1WQWC",
+    "B085J1C25H",
+    "B085J1F1WF",
+    "B085JKB187",
+    "B085JKC9JM",
+    "B085JK7D4M",
+    "B085JJZQ31",
+    "B085JKC34X",
+    "B085J29JG1",
+    "B08JHC1KFH",
+    "B085JQXWCM",
+    "B085K32J4R",
+]);
 
-$util = new UtilDBConnection();
+var_dump($results);
 
-$shop = new ShopDBConnection();
+// $util = new UtilDBConnection();
 
-$assocs = $util->getASINAssocs();
+// $shop = new ShopDBConnection();
 
-var_dump($assocs);
+// $assocs = $util->getASINAssocs();
 
-// $feeReq = $api->getFeesByASIN("B07M8PC7JC", 168.99);
-
-// var_dump($feeReq['payload']['FeesEstimateResult']['FeesEstimate']['TotalFeesEstimate']);
+// var_dump($assocs);
 
 // $results = $shop->getInventoryInfo();
 

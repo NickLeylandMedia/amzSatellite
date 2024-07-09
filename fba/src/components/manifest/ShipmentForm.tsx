@@ -14,15 +14,18 @@ import { createShipment } from "@/modules/api/shipments";
 /* Component Interfaces */
 interface Props {
   modeSetter: (string: string) => void;
+  refetch: any;
+  targeter: (any: any) => void;
 }
 
 /* Component */
-const ShipmentForm: React.FC<Props> = ({ modeSetter }) => {
+const ShipmentForm: React.FC<Props> = ({ modeSetter, refetch, targeter }) => {
   /* State Variables */
   const [compMode, setCompMode] = useState<string>("create");
   const [name, setName] = useState<string>("");
   const [date, setDate] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
+  const [lastCreatedID, setLastCreatedID] = useState<number | null>(null);
 
   /* End State Variables */
 
@@ -33,6 +36,8 @@ const ShipmentForm: React.FC<Props> = ({ modeSetter }) => {
   function submitNewShipment(name: string, date: string, summary: string) {
     createShipment(name, date, summary).then((res) => {
       if (res && res.message) {
+        setLastCreatedID(res.shipment.id);
+        refetch();
         setCompMode("view");
       }
     });
@@ -48,6 +53,9 @@ const ShipmentForm: React.FC<Props> = ({ modeSetter }) => {
   /* End Functions */
 
   /* Effects */
+  useEffect(() => {
+    console.log({ lastCreatedID: lastCreatedID });
+  }, [lastCreatedID]);
 
   /* End Effects */
 
@@ -77,7 +85,7 @@ const ShipmentForm: React.FC<Props> = ({ modeSetter }) => {
           className="bg-yellow-500 hover:bg-yellow-700 py-3 px-5 w-[40%] mx-auto block"
           onClick={(e) => {
             e.preventDefault();
-            setCompMode("create");
+            targeter(lastCreatedID);
           }}
         >
           Add Contents To Shipment

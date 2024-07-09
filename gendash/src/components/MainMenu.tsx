@@ -51,6 +51,12 @@ const MainMenu: React.FC<Props> = ({ modeSetter }) => {
       >
         ASINS
       </button>
+      <button
+        className="bg-blue-600 px-6 py-2 hover:bg-blue-800"
+        onClick={() => modeSetter("audit")}
+      >
+        AUDITS
+      </button>
     </div>
   );
 };

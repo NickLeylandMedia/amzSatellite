@@ -7,7 +7,6 @@ namespace amzSatellite;
 // Enabling Composer Packages
 require __DIR__ . '/../vendor/autoload.php';
 
-require_once __DIR__ . '/models/asinOffer.php';
 
 //Loading Packages/deps
 use Dotenv\Dotenv;
@@ -39,16 +38,15 @@ class APIConnection
     private $fees;
     private $catalog;
     private $orders;
-    private $notifications;
 
     public function __construct()
     {
         //Overall Connection
         $this->api = SellingPartnerApi::seller(
-            clientId: $_ENV["CLIENT_ID"],
-            clientSecret: $_ENV["CLIENT_SECRET"],
-            refreshToken: $_ENV["REFRESH_TOKEN"],
-            endpoint: Endpoint::NA,  // Or Endpoint::EU, Endpoint::FE, Endpoint::NA_SANDBOX, etc.
+            $_ENV["CLIENT_ID"],
+            $_ENV["CLIENT_SECRET"],
+            $_ENV["REFRESH_TOKEN"],
+            Endpoint::NA,
         );
 
         //API Endpoints
@@ -165,15 +163,68 @@ class APIConnection
         return ['items' => $items, 'brands' => array_unique($brands)];
     }
 
-    public function getFeesByASIN($asin, $price)
+    public function getFeesByASIN($asin, $price, $maxRetries = 15)
     {
-        $MT = new MoneyType("USD", $price);
-        $PTEF = new PriceToEstimateFees($MT, null, null);
-        $FER = new FeesEstimateRequest("ATVPDKIKX0DER", $PTEF, $asin);
-        $GMFER = new GetMyFeesEstimateRequest($FER);
+        //Initialize retries
+        $retries = 0;
+        do {
+            try {
+                //Initialize Objects for API Request
+                $MT = new MoneyType("USD", $price);
+                $PTEF = new PriceToEstimateFees($MT, null, null);
+                $FER = new FeesEstimateRequest("ATVPDKIKX0DER", $PTEF, $asin);
+                $GMFER = new GetMyFeesEstimateRequest($FER);
+                //Get Fees from API
+                $response = $this->fees->getMyFeesEstimateForAsin($asin, $GMFER)->json();
+                //If Fees property exists in the response, return the fees
+                if (isset($response['payload']['FeesEstimateResult']['FeesEstimate']['TotalFeesEstimate']['Amount'])) {
+                    //Return the response
+                    return $response['payload']['FeesEstimateResult']['FeesEstimate']['TotalFeesEstimate']['Amount'];
+                }
+                //If the response has an error code, throw an exception
+                if (isset($response['payload']['FeesEstimateResult']['Error']['Code'])) {
+                    throw new Exception("Invalid ASIN");
+                }
+            } catch (Exception $ex) {
+                //If error message contains "invalid", throw an exception, end the retry loop
+                if (str_contains($ex->getMessage(), "Invalid ASIN")) {
+                    throw new Exception("$asin is not a valid ASIN.");
+                    return;
+                }
+                //Increment retries on failure
+                $retries++;
+                //Sleep for 2 seconds before retrying
+                sleep(2 * $retries);
+                //If the max retries are reached, throw an exception
+                if ($retries == $maxRetries) {
+                    throw new Exception("Failed to get offers for $asin after $maxRetries retries.");
+                }
+            }
+        } while ($retries < $maxRetries);
+    }
 
-        $response = $this->fees->getMyFeesEstimateForAsin($asin, $GMFER)->json();
-        return $response;
+    public function bulkGetFeesByASIN($asins)
+    {
+        //Initialize payload and error arrays
+        $payload = [];
+        $errorLoad = [];
+        $count = 0;
+        //Iterate through list of ASIN's and get offers
+        foreach ($asins as $asin) {
+            try {
+                $count++;
+                echo ("Processing ASIN $count of " . count($asins));
+                //Get fees by ASIN
+                $data = $this->getFeesByASIN($asin->asin, $asin->price);
+                //Push the ASIN and offers to the payload array
+                array_push($payload, ["asin" => $asin, "fee" => $data]);
+            } catch (\Exception $ex) {
+                //If an error occurs, push the ASIN and error message to the errorLoad array
+                array_push($errorLoad, ["asin" => $asin, "error" => $ex->getMessage()]);
+            }
+        }
+        //Return final payload
+        return [$payload, $errorLoad];
     }
 
     public function getOffersByASIN($asin, $maxRetries = 15)
@@ -245,7 +296,7 @@ class APIConnection
         foreach ($asins as $asin) {
             try {
                 $count++;
-                echo ("Processing ASIN $count of " . count($asins));
+                var_dump("Processing ASIN $count of " . count($asins));
                 //Get offers by ASIN
                 $data = $this->getOffersByASIN($asin);
                 //Push the ASIN and offers to the payload array

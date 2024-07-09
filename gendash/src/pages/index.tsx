@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 
 /* Component Imports */
 import ASINBase from "@/components/ASINBase";
+import AuditMenu from "@/components/AuditMenu";
 import MainMenu from "@/components/MainMenu";
 
 /* Module Imports */
@@ -85,6 +86,25 @@ const Home: React.FC<Props> = () => {
             Amazon Satellite
           </h1>
           <MainMenu modeSetter={setMode} />
+        </div>
+        {/* Content End */}
+        {/* Footer Start */}
+        {/* <Footer /> */}
+        {/* Footer End */}
+      </div>
+    );
+  }
+
+  if (pageMode === "audit") {
+    return (
+      <div className="Home page">
+        {/* Header Start */}
+        <header></header>
+        {/* Header End */}
+        {/* Content Start */}
+        <div className="mainContent">
+          <h1 className="text-3xl text-black text-center my-3">AUDITS</h1>
+          <AuditMenu />
         </div>
         {/* Content End */}
         {/* Footer Start */}
