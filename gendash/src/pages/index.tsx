@@ -14,6 +14,7 @@ import MainMenu from "@/components/MainMenu";
 /* Module Imports */
 import { useQuery } from "@tanstack/react-query";
 import { getAsins, getFromDB } from "@/modules/api/asins";
+import { getAuditData } from "@/modules/api/audits";
 
 /* Component Interfaces */
 interface Props {}
@@ -43,6 +44,12 @@ const Home: React.FC<Props> = () => {
   const dbQuery = useQuery({
     queryKey: ["dbQuery"],
     queryFn: () => getFromDB().then((data) => data),
+  });
+
+  //Old Town Audit Query
+  const otQuery = useQuery({
+    queryKey: ["otQuery"],
+    queryFn: () => getAuditData().then((data) => data),
   });
 
   /* End Effects */
@@ -104,7 +111,7 @@ const Home: React.FC<Props> = () => {
         {/* Content Start */}
         <div className="mainContent">
           <h1 className="text-3xl text-black text-center my-3">AUDITS</h1>
-          <AuditMenu />
+          <AuditMenu audits={otQuery.data} />
         </div>
         {/* Content End */}
         {/* Footer Start */}

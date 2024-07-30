@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import ManifestLog from "@/components/manifest/ManifestLog";
 import ShipmentDetail from "@/components/manifest/ShipmentDetail";
 import ShipmentForm from "@/components/manifest/ShipmentForm";
+import Search from "@/components/manifest/Search";
 
 /* Module Imports */
 import {
@@ -27,7 +28,10 @@ const Home: React.FC<Props> = () => {
   /* State Variables */
   const [pageMode, setPageMode] = useState("manifest");
   const [target, setTarget] = useState(null);
-  const [manifest, setManifest] = useState([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [finalResults, setFinalResults] = useState<any[]>([]);
+
   /* End State Variables */
 
   /* Render Variables */
@@ -56,15 +60,58 @@ const Home: React.FC<Props> = () => {
     refetchInterval: 30000,
   });
 
+  useEffect(() => {
+    if (searchTerm && manifestQuery.data && manifestQuery.data.length > 0) {
+      const results = manifestQuery.data.filter((item: any) => {
+        if (item && item.sku.includes(searchTerm)) {
+          return item;
+        }
+      });
+      setSearchResults(results);
+    }
+  }, [searchTerm]);
+
+  useEffect(() => {
+    if (searchResults && searchResults.length > 0) {
+      //Iterate through search results, group by shipment_id
+      const groupedResults: any[] = [];
+      searchResults.forEach((item: any) => {
+        const found = groupedResults.find(
+          (group) => group.shipment_id === item.shipment_id
+        );
+        if (found) {
+          found.items.push(item);
+        } else {
+          groupedResults.push({
+            shipment_id: item.shipment_id,
+            items: [item],
+          });
+        }
+      });
+      if (groupedResults.length > 0) {
+        const finalResults = groupedResults.map((group) => {
+          const shipment = shipmentQuery.data.find(
+            (item: any) => item.id === group.shipment_id
+          );
+          return {
+            shipment,
+            items: group.items,
+          };
+        });
+        setFinalResults(finalResults);
+      }
+    }
+  }, [searchResults]);
+
   /* End Effects */
 
   /* Component Return Statement */
   if (
     target &&
     shipmentQuery.isFetched &&
-    shipmentQuery.data.length > 0 &&
-    manifestQuery.isFetched &&
-    manifestQuery.data.length > 0
+    shipmentQuery.data.length >= 1
+    // manifestQuery.isFetched &&
+    // manifestQuery.data.length > 0
   ) {
     //Get Manifest Data
     const targManifest = manifestQuery.data.filter((item: any) => {
@@ -81,6 +128,7 @@ const Home: React.FC<Props> = () => {
         manifest={targManifest}
         clearer={clearManifestAndTarget}
         refetch={manifestQuery.refetch}
+        shipmentRefetch={shipmentQuery.refetch}
       />
     );
   }
@@ -92,6 +140,13 @@ const Home: React.FC<Props> = () => {
       {/* Header End */}
       {/* Content Start */}
       <div className="mainContent">
+        {pageMode && pageMode === "search" ? (
+          <Search
+            results={finalResults}
+            termSetter={setSearchTerm}
+            modeSetter={setPageMode}
+          />
+        ) : null}
         {pageMode && pageMode === "manifest" ? (
           <ManifestLog
             shipments={shipmentQuery.data}

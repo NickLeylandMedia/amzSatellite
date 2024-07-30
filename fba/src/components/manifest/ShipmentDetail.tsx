@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 /* Component Imports */
+import AreYouSure from "../global/AreYouSure";
 import SKUForm from "./SKUForm";
 
 /* Module Imports */
@@ -18,6 +19,7 @@ interface Props {
   manifest: any[];
   clearer: any;
   refetch: any;
+  shipmentRefetch: any;
 }
 
 /* Component */
@@ -26,10 +28,11 @@ const ShipmentDetail: React.FC<Props> = ({
   manifest,
   clearer,
   refetch,
+  shipmentRefetch,
 }) => {
-  console.log({ data: data });
   /* State Variables */
   const [showSKUForm, setShowSKUForm] = useState(false);
+  const [confirmDeletion, setConfirmDeletion] = useState(false);
   /* End State Variables */
 
   /* Render Variables */
@@ -69,6 +72,14 @@ const ShipmentDetail: React.FC<Props> = ({
           refetch={refetch}
         />
       )}
+      {confirmDeletion ? (
+        <AreYouSure
+          closer={setConfirmDeletion}
+          shipmentID={data.id}
+          clearer={clearer}
+          shipmentRefetch={shipmentRefetch}
+        />
+      ) : null}
       <IoMdArrowRoundBack
         className="absolute w-12 h-12 text-black top-[50px] left-[200px] cursor-pointer hover:text-red-500"
         onClick={() => clearer()}
@@ -93,6 +104,12 @@ const ShipmentDetail: React.FC<Props> = ({
           onClick={(e) => setShowSKUForm(true)}
         >
           ADD SKUS TO SHIPMENT
+        </button>
+        <button
+          className="bg-red-500 py-4 px-8 mx-2 hover:bg-red-900"
+          onClick={(e) => setConfirmDeletion(true)}
+        >
+          DELETE SHIPMENT
         </button>
       </div>
       <div className="w-[75%] my-5 mx-auto grid grid-cols-1 gap-6">

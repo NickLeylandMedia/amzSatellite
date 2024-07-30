@@ -63,10 +63,16 @@ const ManifestLog: React.FC<Props> = ({ shipments, modeSetter, targeter }) => {
       <h1 className="text-black text-center text-4xl">FBA Shipment Manifest</h1>
       <div className="manifestActions mx-auto w-[50%] flex flex-row justify-center my-4">
         <button
-          className="py-3 px-8 bg-green-400 hover:bg-green-700"
+          className="py-3 px-8 bg-green-400 hover:bg-green-700 mx-2"
           onClick={(e) => modeSetter("form")}
         >
           Add A Shipment
+        </button>
+        <button
+          className="py-3 px-8 bg-yellow-400 hover:bg-yellow-700 mx-2"
+          onClick={(e) => modeSetter("search")}
+        >
+          Search Shipments
         </button>
       </div>
       <div className="shipmentLog grid grid-cols-3 w-full mx-auto my-5">

@@ -53,9 +53,6 @@ const ShipmentForm: React.FC<Props> = ({ modeSetter, refetch, targeter }) => {
   /* End Functions */
 
   /* Effects */
-  useEffect(() => {
-    console.log({ lastCreatedID: lastCreatedID });
-  }, [lastCreatedID]);
 
   /* End Effects */
 

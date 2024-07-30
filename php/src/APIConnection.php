@@ -23,7 +23,7 @@ use SellingPartnerApi\Seller\ProductFeesV0\Dto\MoneyType;
 use amzSatellite\UtilDBConnection;
 
 // use amzSatellite\Sellers;
-use asinOffer;
+use amzSatellite\models\asinOffer;
 use Exception;
 
 // Get environment variables

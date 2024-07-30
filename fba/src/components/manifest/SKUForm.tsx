@@ -113,7 +113,6 @@ const SKUForm: React.FC<Props> = ({ closer, shipmentID, refetch }) => {
           quantity: item.qty || item.Quantity || item.quantity,
         };
       });
-      console.log(formattedImport);
       setFinalImport(formattedImport);
     }
   }, [importList]);

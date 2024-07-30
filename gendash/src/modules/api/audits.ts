@@ -9,4 +9,11 @@ async function OTScope(asins: any[]) {
   ).then((res) => res.json());
 }
 
-export { OTScope };
+//Get Audit Data
+async function getAuditData() {
+  return await fetch(
+    "https://api.blackhalloutfitters.com/debug/amzsatellite/src/scripts/audits/getota.php"
+  ).then((res) => res.json());
+}
+
+export { OTScope, getAuditData };

@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-
-// Enabling Composer Packages
-require __DIR__ . '/../../vendor/autoload.php';
+namespace amzSatellite\models;
 
 class asinOffer
 {

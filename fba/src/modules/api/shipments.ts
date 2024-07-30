@@ -68,6 +68,30 @@ async function bulkPushToShipment(items: any[]) {
   ).then((res) => res.json());
 }
 
+async function deleteShipmentByID(id: number) {
+  return await fetch(
+    `https://api.blackhalloutfitters.com/debug/fbamanifest/src/scripts/deleteshipment.php`,
+    {
+      method: "POST",
+      body: JSON.stringify({
+        shipmentId: id,
+      }),
+    }
+  ).then((res) => res.json());
+}
+
+// async function clearShipmentItemsByID(id: number) {
+//   return await fetch(
+//     `https://api.blackhalloutfitters.com/debug/fbamanifest/src/scripts/deletemanifestitems.php`,
+//     {
+//       method: "POST",
+//       body: JSON.stringify({
+//         shipmentId: id,
+//       }),
+//     }
+//   ).then((res) => res.json());
+// }
+
 export {
   createShipment,
   getShipments,
@@ -75,4 +99,6 @@ export {
   getShipmentItems,
   pushToShipment,
   bulkPushToShipment,
+  deleteShipmentByID,
+  // clearShipmentItemsByID,
 };
